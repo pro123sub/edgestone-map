@@ -367,6 +367,10 @@ a,
             width: 80%;
           }
 
+          .mapboxgl-ctrl-top-right {
+            display: none !important;
+          }
+
           /* Add these lines to hide Mapbox logo and attribution */
           .mapboxgl-ctrl-bottom-left,
           .mapboxgl-ctrl-bottom-right {
@@ -706,7 +710,7 @@ a,
                 alt="Logo"
                 style="width: 100px; height: auto"
             /></a>
-            <div id="geocoder" class="mapboxgl-ctrl-geocoder"></div>
+            <!-- <div id="geocoder" class="mapboxgl-ctrl-geocoder"></div> -->
             <div class="controls" id="controls">
               <div class="collapsible">
                 PoPs
@@ -1421,11 +1425,11 @@ a,
                   .addTo(map);
               });
 
-              document
-                .getElementById("geocoder")
-                .appendChild(geocoder.onAdd(map));
+            //   document
+            //     .getElementById("geocoder")
+            //     .appendChild(geocoder.onAdd(map));
 
-              map.addControl(geocoder); // Add the geocoder control to the map
+            //   map.addControl(geocoder); // Add the geocoder control to the map
             }
 
             map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
