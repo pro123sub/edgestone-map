@@ -125,6 +125,7 @@
         hideDecimalForWholeNumbers: false,
       };
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
     <div class="global-styles w-embed">
@@ -352,82 +353,75 @@ a,
             font-size: 10px;
           }
         }
+
+        .filters {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 40%;
+          z-index: 9997;
+          background-color: #ffffff;
+          padding: 20px;
+          height: 100%;
+          transition: width 0.3s ease;
+          overflow: hidden;
+        }
+
+        .toggle-button {
+          position: absolute;
+          right: -1px;
+          top: 80%;
+          transform: translateY(-50%);
+          background: white;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          z-index: 9998;
+        }
+
+        .toggle-button i {
+          font-size: 16px;
+          color: #333;
+          transition: transform 0.3s ease;
+        }
+
+        .filters.collapsed {
+          width: 20%;
+        }
+
+        .filters.collapsed .controls {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .filters.collapsed .toggle-button i {
+          transform: rotate(180deg);
+        }
+
+        .controls {
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        #map {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 60%;
+          transition: width 0.3s ease;
+        }
+
+        .map-expanded {
+          width: 80% !important;
+        }
       </style>
     </div>
-
-    <div class="wrapper">
-      <div id="sidebar" class="expanded">
-        <!-- Your existing sidebar content -->
-        <button id="toggle-sidebar" class="toggle-btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-      </div>
-      <div id="map"></div>
-    </div>
-
-    <style>
-      .wrapper {
-        display: flex;
-        height: 100vh;
-      }
-
-      #sidebar {
-        position: relative;
-        width: 20%;
-        background: white;
-        transition: width 0.3s ease;
-      }
-
-      #sidebar.collapsed {
-        width: 0;
-      }
-
-      #map {
-        flex: 1;
-        transition: width 0.3s ease;
-      }
-
-      .toggle-btn {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        background: white;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-      }
-
-      #sidebar.collapsed .toggle-btn {
-        transform: rotate(180deg);
-      }
-    </style>
-
-    <script>
-      // Add this after your existing script
-      document
-        .getElementById("toggle-sidebar")
-        .addEventListener("click", function () {
-          document.getElementById("sidebar").classList.toggle("collapsed");
-        });
-    </script>
 
     <div class="w-embed w-script">
       <!DOCTYPE html>
@@ -796,6 +790,9 @@ a,
             type="text/css"
           />
           <div class="filters" id="filters">
+            <div class="toggle-button">
+              <i class="fas fa-chevron-left" id="toggleIcon"></i>
+            </div>
             <a href="https://edgestone.in/" target="_blank">
               <img
                 src="https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"
@@ -1545,5 +1542,17 @@ a,
     >
       &copy; 2024 Edgestone. All rights reserved.
     </footer>
+    <script>
+      const filters = document.getElementById('filters');
+      const mapContainer = document.getElementById('map');
+      const toggleButton = document.querySelector('.toggle-button');
+      const toggleIcon = document.getElementById('toggleIcon');
+
+      toggleButton.addEventListener('click', () => {
+      console.log("clicked")
+        filters.classList.toggle('collapsed');
+        mapContainer.classList.toggle('map-expanded');
+      });
+    </script>
   </body>
 </html>
