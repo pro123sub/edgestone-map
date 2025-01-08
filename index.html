@@ -355,6 +355,80 @@ a,
       </style>
     </div>
 
+    <div class="wrapper">
+      <div id="sidebar" class="expanded">
+        <!-- Your existing sidebar content -->
+        <button id="toggle-sidebar" class="toggle-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <style>
+      .wrapper {
+        display: flex;
+        height: 100vh;
+      }
+
+      #sidebar {
+        position: relative;
+        width: 20%;
+        background: white;
+        transition: width 0.3s ease;
+      }
+
+      #sidebar.collapsed {
+        width: 0;
+      }
+
+      #map {
+        flex: 1;
+        transition: width 0.3s ease;
+      }
+
+      .toggle-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+      }
+
+      #sidebar.collapsed .toggle-btn {
+        transform: rotate(180deg);
+      }
+    </style>
+
+    <script>
+      // Add this after your existing script
+      document
+        .getElementById("toggle-sidebar")
+        .addEventListener("click", function () {
+          document.getElementById("sidebar").classList.toggle("collapsed");
+        });
+    </script>
+
     <div class="w-embed w-script">
       <!DOCTYPE html>
       <html>
