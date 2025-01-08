@@ -125,7 +125,6 @@
         hideDecimalForWholeNumbers: false,
       };
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
     <div class="global-styles w-embed">
@@ -352,73 +351,6 @@ a,
           .map-copyright {
             font-size: 10px;
           }
-        }
-
-        .filters {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          width: 40%;
-          z-index: 9997;
-          background-color: #ffffff;
-          padding: 20px;
-          height: 100%;
-          transition: width 0.3s ease;
-          overflow: hidden;
-        }
-
-        .toggle-button {
-          position: absolute;
-          right: -1px;
-          top: 80%;
-          transform: translateY(-50%);
-          background: white;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-          z-index: 9998;
-        }
-
-        .toggle-button i {
-          font-size: 16px;
-          color: #333;
-          transition: transform 0.3s ease;
-        }
-
-        .filters.collapsed {
-          width: 20%;
-        }
-
-        .filters.collapsed .controls {
-          opacity: 0;
-          visibility: hidden;
-        }
-
-        .filters.collapsed .toggle-button i {
-          transform: rotate(180deg);
-        }
-
-        .controls {
-          transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        #map {
-          position: absolute;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          width: 60%;
-          transition: width 0.3s ease;
-        }
-
-        .map-expanded {
-          width: 80% !important;
         }
       </style>
     </div>
@@ -790,9 +722,6 @@ a,
             type="text/css"
           />
           <div class="filters" id="filters">
-            <div class="toggle-button">
-              <i class="fas fa-chevron-left" id="toggleIcon"></i>
-            </div>
             <a href="https://edgestone.in/" target="_blank">
               <img
                 src="https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"
@@ -1542,17 +1471,5 @@ a,
     >
       &copy; 2024 Edgestone. All rights reserved.
     </footer>
-    <script>
-      const filters = document.getElementById('filters');
-      const mapContainer = document.getElementById('map');
-      const toggleButton = document.querySelector('.toggle-button');
-      const toggleIcon = document.getElementById('toggleIcon');
-
-      toggleButton.addEventListener('click', () => {
-      console.log("clicked")
-        filters.classList.toggle('collapsed');
-        mapContainer.classList.toggle('map-expanded');
-      });
-    </script>
   </body>
 </html>
