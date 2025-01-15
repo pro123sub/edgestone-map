@@ -352,6 +352,17 @@ a,
             font-size: 10px;
           }
         }
+
+        /* Line popup styles */
+        .line-popup .mapboxgl-popup-content {
+          background: transparent;
+          box-shadow: none;
+          padding: 0;
+        }
+
+        .line-popup .mapboxgl-popup-tip {
+          display: none;
+        }
       </style>
     </div>
 
@@ -1123,20 +1134,19 @@ a,
                   .setHTML(
                     `
                 <div style="background-color: #fff;  border-style: none; text-decoration: none; ">
-                    <img src="${
-                      feature.properties.image
-                    }" style="display: block; margin-left: auto; margin-right: auto; height: 90px; width: 220px;">
-                    <h4>${feature.properties.name}</h4>
+                    <img src="${"https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 190px; width: 220px;">
+                    <h4>Partner PoP at ${feature.properties.name}</h4>
 										<p style="white-space: normal; word-wrap: break-word;">${feature.properties.address.replace(
                       /\n/g,
                       "<br>"
                     )}</p>
-                    <a href="https://edgestone.in/contact-us/" style="display: block; margin-top: 30px; border: 1px solid black; width:60%; margin-left: auto; margin-right: auto; ">Contact Us</a>
                 </div>
             `
                   )
                   .addTo(map);
               });
+
+              // <a href="https://edgestone.in/contact-us/" style="display: block; margin-top: 30px; border: 1px solid black; width:60%; margin-left: auto; margin-right: auto; ">Contact Us</a>
 
               map.on("click", `${filename}_clusters`, function (e) {
                 const features = map.queryRenderedFeatures(e.point, {
@@ -1306,19 +1316,79 @@ a,
               checkbox.addEventListener("change", function () {
                 var id = this.id.replace("control", "");
                 var visibility = this.checked ? "visible" : "none";
-                map.setLayoutProperty(id, "visibility", visibility);
-                map.setLayoutProperty(id + "_symbol", "visibility", visibility);
-                map.setLayoutProperty(id + "_points", "visibility", visibility);
-                map.setLayoutProperty(
-                  id + "_clusters",
-                  "visibility",
-                  this.checked ? "visible" : "none"
-                );
-                map.setLayoutProperty(
-                  id + "_cluster-count",
-                  "visibility",
-                  this.checked ? "visible" : "none"
-                );
+
+                // If this is a line layer (not a point/site layer)
+                if (!id.includes("Sites") && !id.includes("offices")) {
+                  // First hide all line layers
+                  mapFiles_LineStrings.forEach(function (lineId) {
+                    map.setLayoutProperty(lineId, "visibility", "none");
+                    map.setLayoutProperty(
+                      lineId + "_symbol",
+                      "visibility",
+                      "none"
+                    );
+                  });
+
+                  // Then show only the selected line if checked
+                  if (this.checked) {
+                    map.setLayoutProperty(id, "visibility", "visible");
+                    map.setLayoutProperty(
+                      id + "_symbol",
+                      "visibility",
+                      "visible"
+                    );
+                  }
+                } else {
+                  // For points/sites, keep original behavior
+                  map.setLayoutProperty(id, "visibility", visibility);
+                  map.setLayoutProperty(
+                    id + "_points",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_clusters",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_cluster-count",
+                    "visibility",
+                    visibility
+                  );
+                }
+              });
+            });
+
+            // Add hover events for lines
+            mapFiles_LineStrings.forEach(function (lineId) {
+              map.on("mouseenter", lineId, function (e) {
+                map.getCanvas().style.cursor = "pointer";
+
+                const description = e.features[0].properties.description;
+                if (description) {
+                  const coordinates = e.lngLat;
+
+                  new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false,
+                    className: "line-popup",
+                  })
+                    .setLngLat(coordinates)
+                    .setHTML(
+                      `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
+                            ${description}
+                           </div>`
+                    )
+                    .addTo(map);
+                }
+              });
+
+              map.on("mouseleave", lineId, function () {
+                map.getCanvas().style.cursor = "";
+                const popups =
+                  document.getElementsByClassName("mapboxgl-popup");
+                if (popups[0]) popups[0].remove();
               });
             });
 
