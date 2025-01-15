@@ -352,6 +352,80 @@ a,
             font-size: 10px;
           }
         }
+
+        /* Line popup styles */
+        .line-popup .mapboxgl-popup-content {
+          background: transparent;
+          box-shadow: none;
+          padding: 0;
+        }
+
+        .line-popup .mapboxgl-popup-tip {
+          display: none;
+        }
+
+        /* Mobile styles for zoom controls */
+        @media only screen and (max-width: 480px) {
+          .zoom-controls {
+            top: 80px;
+          }
+        }
+
+        /* Filter toggle button styles */
+        .filter-toggle {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          z-index: 9998;
+          background-color: rgba(0, 0, 0, 0.5);
+          border: none;
+          border-radius: 4px;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        }
+
+        .filter-toggle:hover {
+          background-image: #FF642C;
+        }
+
+        .filter-toggle svg {
+          width: 24px;
+          height: 24px;
+          fill: #fff;
+          transition: transform 0.3s ease;
+        }
+
+        .filter-toggle:hover svg {
+          fill: white;
+        }
+
+        .filter-toggle.active svg {
+          transform: rotate(180deg);
+        }
+
+        #filters {
+          transition: transform 0.3s ease;
+        }
+
+        #filters.hidden {
+          transform: translateX(-100%);
+        }
+
+        @media only screen and (max-width: 480px) {
+          #filters {
+            display: block;
+            transform: translateX(-100%);
+          }
+          #filters.visible {
+            transform: translateX(0);
+          }
+        }
       </style>
     </div>
 
@@ -382,7 +456,7 @@ a,
             top: 0;
             bottom: 0;
 
-            width: 80%;
+            width: 100%;
           }
 
           .mapboxgl-ctrl-top-right {
@@ -406,6 +480,31 @@ a,
             background-color: #ffffff;
             padding: 20px;
             height: 100%;
+          }
+
+          /* Show All Cables button style */
+          .show-all-cables {
+            display: none; /* Hide by default */
+            width: 90%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #cacece;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+          }
+
+          .show-all-cables:hover {
+            background-image: #FF642C;
+            color: white;
+            border-color: transparent;
+          }
+
+          .show-all-cables.visible {
+            display: block;
           }
 
           .controls {
@@ -518,14 +617,14 @@ a,
           }
 
           .point-popup a:hover {
-            color: #000000;
+            color: white;
             border: 1px solid black;
             border-radius: 50px;
             cursor: pointer;
             padding: 10px 20px;
             text-decoration: none;
-            background-color: var(--dark-100);
-            background-image: linear-gradient(135deg, #1ed760, #00d7ff);
+            background-color: #FF642C;
+            background-image: #FF642C;
           }
 
           .point-popup a:visited {
@@ -538,6 +637,7 @@ a,
           }
 
           .point-popup:hover {
+            background: #FF642C;
           }
 
           .mapboxgl-popup-close-button {
@@ -549,7 +649,7 @@ a,
           .mapboxgl-popup-close-button:hover {
             background-color: transparent;
             font-size: 24px;
-            color: #000; /* cross colour */
+            color: white; /* cross colour */
           }
 
           .pop_detail.visible {
@@ -570,7 +670,7 @@ a,
             top: 20px;
             right: 1%;
             padding: 10px 20px;
-            background-color: transparent;
+            background-color: #FF642C;
             color: #fff;
             border: 1px solid white;
             border-radius: 50px;
@@ -583,9 +683,9 @@ a,
           }
 
           .zoom-out-button:hover {
-            background-color: var(--dark-100);
-            background-image: linear-gradient(135deg, #1ed760, #00d7ff);
-            color: #000000; /* Button text color */
+            background-color: #FF642C;
+            background-image: #FF642C;
+            color: white; /* Button text color */
             border: 1px solid black;
             transition: background-color 0.3s ease-in-out,
               color 0.3s ease-in-out, border 0.3s ease-in-out;
@@ -637,12 +737,12 @@ a,
 
           /* Tablet styles */
           @media only screen and (max-width: 1220px) {
-            #map {
+            /* #map {
               width: 65%;
-            }
+            } */
 
             #filters {
-              width: 35%;
+              width: 100%;
             }
           }
 
@@ -651,9 +751,9 @@ a,
             #map {
               width: 100%;
             }
-            #filters {
+            /* #filters {
               display: none;
-            }
+            } */
             .mapboxgl-ctrl-geocoder {
               display: none;
             }
@@ -693,9 +793,9 @@ a,
           }
 
           .zoom-controls button:hover {
-            background-color: var(--dark-100);
-            background-image: linear-gradient(135deg, #1ed760, #00d7ff);
-            color: #000000;
+            background-color: #FF642C;
+            background-image: #FF642C;
+            color: white;
           }
 
           .zoom-controls button:disabled {
@@ -721,14 +821,27 @@ a,
             href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
             type="text/css"
           />
-          <div class="filters" id="filters">
+          <button
+            class="filter-toggle"
+            id="filterToggle"
+            aria-label="Toggle Filters"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
+              />
+            </svg>
+          </button>
+          <div class="filters hidden" id="filters">
             <a href="https://edgestone.in/" target="_blank">
               <img
                 src="https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"
                 alt="Logo"
                 style="width: 100px; height: auto"
             /></a>
-            <!-- <div id="geocoder" class="mapboxgl-ctrl-geocoder"></div> -->
+            <button id="showAllCables" class="show-all-cables">
+              Show All Cables
+            </button>
             <div class="controls" id="controls">
               <div class="collapsible">
                 PoPs
@@ -823,7 +936,9 @@ a,
               <button id="zoomInButton">+</button>
               <button id="zoomOutBtn">−</button>
             </div>
-            <div class="map-copyright">&copy; 2024 Edgestone. All rights reserved.</div>
+            <div class="map-copyright">
+              &copy; 2025 Edgestone. All rights reserved.
+            </div>
           </div>
           <div id="pop_detail" class="pop_detail">
             <div
@@ -1121,20 +1236,19 @@ a,
                   .setHTML(
                     `
                 <div style="background-color: #fff;  border-style: none; text-decoration: none; ">
-                    <img src="${
-                      feature.properties.image
-                    }" style="display: block; margin-left: auto; margin-right: auto; height: 90px; width: 220px;">
-                    <h4>${feature.properties.name}</h4>
+                    <img src="${"https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 190px; width: 220px;">
+                    <h4>Partner PoP at ${feature.properties.name}</h4>
 										<p style="white-space: normal; word-wrap: break-word;">${feature.properties.address.replace(
                       /\n/g,
                       "<br>"
                     )}</p>
-                    <a href="https://edgestone.in/contact-us/" style="display: block; margin-top: 30px; border: 1px solid black; width:60%; margin-left: auto; margin-right: auto; ">Contact Us</a>
                 </div>
             `
                   )
                   .addTo(map);
               });
+
+              // <a href="https://edgestone.in/contact-us/" style="display: block; margin-top: 30px; border: 1px solid black; width:60%; margin-left: auto; margin-right: auto; ">Contact Us</a>
 
               map.on("click", `${filename}_clusters`, function (e) {
                 const features = map.queryRenderedFeatures(e.point, {
@@ -1206,15 +1320,12 @@ a,
                   .setHTML(
                     `
 <div style="background-color: #fff;  border-style: none; text-decoration: none; ">
-<img src="${
-                      feature.properties.image
-                    }" style="display: block; margin-left: auto; margin-right: auto; height: 90px; width: 220px;">
-<h4>${feature.properties.name}</h4>
+<img src="${"https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 190px; width: 220px;">
+<h4>Partner PoP at ${feature.properties.name}</h4>
 <p style="white-space: normal; word-wrap: break-word;">${feature.properties.address.replace(
                       /\n/g,
                       "<br>"
                     )}</p>
-<a href="https://edgestone.in/contact-us/" style="display: block; margin-top: 30px; border: 1px solid black; width:60%; margin-left: auto; margin-right: auto; ">Contact Us</a>
 </div>
 `
                   )
@@ -1304,19 +1415,79 @@ a,
               checkbox.addEventListener("change", function () {
                 var id = this.id.replace("control", "");
                 var visibility = this.checked ? "visible" : "none";
-                map.setLayoutProperty(id, "visibility", visibility);
-                map.setLayoutProperty(id + "_symbol", "visibility", visibility);
-                map.setLayoutProperty(id + "_points", "visibility", visibility);
-                map.setLayoutProperty(
-                  id + "_clusters",
-                  "visibility",
-                  this.checked ? "visible" : "none"
-                );
-                map.setLayoutProperty(
-                  id + "_cluster-count",
-                  "visibility",
-                  this.checked ? "visible" : "none"
-                );
+
+                // If this is a line layer (not a point/site layer)
+                if (!id.includes("Sites") && !id.includes("offices")) {
+                  // First hide all line layers
+                  mapFiles_LineStrings.forEach(function (lineId) {
+                    map.setLayoutProperty(lineId, "visibility", "none");
+                    map.setLayoutProperty(
+                      lineId + "_symbol",
+                      "visibility",
+                      "none"
+                    );
+                  });
+
+                  // Then show only the selected line if checked
+                  if (this.checked) {
+                    map.setLayoutProperty(id, "visibility", "visible");
+                    map.setLayoutProperty(
+                      id + "_symbol",
+                      "visibility",
+                      "visible"
+                    );
+                  }
+                } else {
+                  // For points/sites, keep original behavior
+                  map.setLayoutProperty(id, "visibility", visibility);
+                  map.setLayoutProperty(
+                    id + "_points",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_clusters",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_cluster-count",
+                    "visibility",
+                    visibility
+                  );
+                }
+              });
+            });
+
+            // Add hover events for lines
+            mapFiles_LineStrings.forEach(function (lineId) {
+              map.on("mouseenter", lineId, function (e) {
+                map.getCanvas().style.cursor = "pointer";
+
+                const description = e.features[0].properties.description;
+                if (description) {
+                  const coordinates = e.lngLat;
+
+                  new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false,
+                    className: "line-popup",
+                  })
+                    .setLngLat(coordinates)
+                    .setHTML(
+                      `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
+                            ${description}
+                           </div>`
+                    )
+                    .addTo(map);
+                }
+              });
+
+              map.on("mouseleave", lineId, function () {
+                map.getCanvas().style.cursor = "";
+                const popups =
+                  document.getElementsByClassName("mapboxgl-popup");
+                if (popups[0]) popups[0].remove();
               });
             });
 
@@ -1444,22 +1615,202 @@ a,
                   .addTo(map);
               });
 
-            //   document
-            //     .getElementById("geocoder")
-            //     .appendChild(geocoder.onAdd(map));
+              //   document
+              //     .getElementById("geocoder")
+              //     .appendChild(geocoder.onAdd(map));
 
-            //   map.addControl(geocoder); // Add the geocoder control to the map
+              //   map.addControl(geocoder); // Add the geocoder control to the map
             }
 
             map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
             map.dragRotate.disable(); // disable map rotation using right click + drag
             map.touchZoomRotate.disableRotation(); // disable map rotation using touch rotation gesture
+
+            // Add click events for lines and show all cables functionality
+            let currentVisibleLine = null;
+
+            function showAllCableLines() {
+              mapFiles_LineStrings.forEach(function (lineId) {
+                map.setLayoutProperty(lineId, "visibility", "visible");
+                map.setLayoutProperty(
+                  lineId + "_symbol",
+                  "visibility",
+                  "visible"
+                );
+
+                // Update checkboxes
+                const checkbox = document.getElementById("control" + lineId);
+                if (checkbox) checkbox.checked = true;
+              });
+              currentVisibleLine = null;
+
+              // Hide the Show All Cables button
+              document
+                .getElementById("showAllCables")
+                .classList.remove("visible");
+            }
+
+            function showOnlyLine(lineId) {
+              mapFiles_LineStrings.forEach(function (id) {
+                const visibility = id === lineId ? "visible" : "none";
+                map.setLayoutProperty(id, "visibility", visibility);
+                map.setLayoutProperty(id + "_symbol", "visibility", visibility);
+
+                // Update checkboxes
+                const checkbox = document.getElementById("control" + id);
+                if (checkbox) checkbox.checked = id === lineId;
+              });
+              currentVisibleLine = lineId;
+
+              // Show the Show All Cables button
+              document.getElementById("showAllCables").classList.add("visible");
+            }
+
+            // Show All Cables button click handler
+            document
+              .getElementById("showAllCables")
+              .addEventListener("click", function () {
+                // Check all cable checkboxes
+                mapFiles_LineStrings.forEach(function (lineId) {
+                  const checkbox = document.getElementById("control" + lineId);
+                  if (checkbox) checkbox.checked = true;
+                });
+                showAllCableLines();
+              });
+
+            // Add click events for lines
+            mapFiles_LineStrings.forEach(function (lineId) {
+              map.on("click", lineId, function (e) {
+                e.preventDefault();
+                if (currentVisibleLine === lineId) {
+                  showAllCableLines();
+                } else {
+                  showOnlyLine(lineId);
+                }
+              });
+            });
+
+            // Modify checkbox event listeners for lines
+            var checkboxes = document.querySelectorAll(
+              "input[type='checkbox']"
+            );
+            checkboxes.forEach(function (checkbox) {
+              checkbox.addEventListener("change", function () {
+                var id = this.id.replace("control", "");
+                var visibility = this.checked ? "visible" : "none";
+
+                // If this is a line layer (not a point/site layer)
+                if (!id.includes("Sites") && !id.includes("offices")) {
+                  if (this.checked) {
+                    showOnlyLine(id);
+                  } else {
+                    map.setLayoutProperty(id, "visibility", "none");
+                    map.setLayoutProperty(id + "_symbol", "visibility", "none");
+                    currentVisibleLine = null;
+                    // Hide the Show All Cables button when unchecking
+                    document
+                      .getElementById("showAllCables")
+                      .classList.remove("visible");
+                  }
+                } else {
+                  // For points/sites, keep original behavior
+                  map.setLayoutProperty(id, "visibility", visibility);
+                  map.setLayoutProperty(
+                    id + "_points",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_clusters",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_cluster-count",
+                    "visibility",
+                    visibility
+                  );
+                }
+              });
+            });
+
+            // Add hover events for lines
+            mapFiles_LineStrings.forEach(function (lineId) {
+              map.on("mouseenter", lineId, function (e) {
+                map.getCanvas().style.cursor = "pointer";
+
+                const description = e.features[0].properties.description;
+                if (description) {
+                  const coordinates = e.lngLat;
+
+                  new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false,
+                    className: "line-popup",
+                  })
+                    .setLngLat(coordinates)
+                    .setHTML(
+                      `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
+                            ${description}
+                           </div>`
+                    )
+                    .addTo(map);
+                }
+              });
+
+              map.on("mouseleave", lineId, function () {
+                map.getCanvas().style.cursor = "";
+                const popups =
+                  document.getElementsByClassName("mapboxgl-popup");
+                if (popups[0]) popups[0].remove();
+              });
+            });
+
+            // Add filter toggle functionality
+            const filterToggle = document.getElementById("filterToggle");
+            const filtersPanel = document.getElementById("filters");
+
+            filterToggle.addEventListener("click", function () {
+              this.classList.toggle("active");
+              if (window.innerWidth <= 480) {
+                filtersPanel.classList.toggle("visible");
+              } else {
+                filtersPanel.classList.toggle("hidden");
+              }
+            });
+
+            // Update filters visibility on window resize
+            window.addEventListener("resize", function () {
+              if (window.innerWidth <= 480) {
+                filtersPanel.classList.remove("hidden");
+                if (filterToggle.classList.contains("active")) {
+                  filtersPanel.classList.add("visible");
+                } else {
+                  filtersPanel.classList.remove("visible");
+                }
+              } else {
+                filtersPanel.classList.remove("visible");
+                if (filterToggle.classList.contains("active")) {
+                  filtersPanel.classList.add("hidden");
+                } else {
+                  filtersPanel.classList.remove("hidden");
+                }
+              }
+            });
           </script>
         </body>
       </html>
     </div>
-    <footer style="position: fixed; bottom: 10px; right: 10px; font-size: 14px; color: #666;">
-        &copy; 2024 Edgestone. All rights reserved.
-    </footer>
+    <!-- <footer
+      style="
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+        color: #666;
+      "
+    >
+      &copy; 2024 Edgestone. All rights reserved.
+    </footer> -->
   </body>
 </html>
