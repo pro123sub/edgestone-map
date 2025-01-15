@@ -1097,7 +1097,7 @@ a,
                 layout: {
                   "symbol-placement": "line-center",
                   "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-                  "text-field": ["get", "description"],
+                  "text-field": ["get", "name", "description"],
                   "text-size": 10,
                   "text-offset": [0, 1],
                   visibility: "visible",
@@ -1459,6 +1459,7 @@ a,
             mapFiles_LineStrings.forEach(function (lineId) {
               map.on("mouseenter", lineId, function (e) {
                 map.getCanvas().style.cursor = "pointer";
+                const name = e.features[0].properties.name;
 
                 const description = e.features[0].properties.description;
                 if (description) {
@@ -1472,7 +1473,7 @@ a,
                     .setLngLat(coordinates)
                     .setHTML(
                       `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
-                            ${description}
+                            ${name}
                            </div>`
                     )
                     .addTo(map);
@@ -1735,6 +1736,9 @@ a,
               map.on("mouseenter", lineId, function (e) {
                 map.getCanvas().style.cursor = "pointer";
 
+                const name = e.features[0].properties.name;
+                
+
                 const description = e.features[0].properties.description;
                 if (description) {
                   const coordinates = e.lngLat;
@@ -1747,7 +1751,7 @@ a,
                     .setLngLat(coordinates)
                     .setHTML(
                       `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
-                            ${description}
+                            ${name}
                            </div>`
                     )
                     .addTo(map);
