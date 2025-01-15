@@ -1473,7 +1473,7 @@ a,
                     .setLngLat(coordinates)
                     .setHTML(
                       `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
-                            ${name}
+                            ${description}
                            </div>`
                     )
                     .addTo(map);
@@ -1737,7 +1737,17 @@ a,
                 map.getCanvas().style.cursor = "pointer";
 
                 const name = e.features[0].properties.name;
-                
+                if (name) {
+                  const coordinates = e.lngLat;
+                  new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false,
+                    className: "line-popup",
+                  })
+                    .setLngLat(coordinates)
+                    .setHTML(`<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">${name}</div>`)
+                    .addTo(map);
+                }
 
                 const description = e.features[0].properties.description;
                 if (description) {
@@ -1751,7 +1761,7 @@ a,
                     .setLngLat(coordinates)
                     .setHTML(
                       `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
-                            ${name}
+                            ${description}
                            </div>`
                     )
                     .addTo(map);
