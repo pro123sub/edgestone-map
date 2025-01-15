@@ -363,6 +363,69 @@ a,
         .line-popup .mapboxgl-popup-tip {
           display: none;
         }
+
+        /* Mobile styles for zoom controls */
+        @media only screen and (max-width: 480px) {
+          .zoom-controls {
+            top: 80px;
+          }
+        }
+
+        /* Filter toggle button styles */
+        .filter-toggle {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          z-index: 9998;
+          background-color: rgba(0, 0, 0, 0.5);
+          border: none;
+          border-radius: 4px;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        }
+
+        .filter-toggle:hover {
+          background-image: linear-gradient(135deg, #1ed760, #00d7ff);
+        }
+
+        .filter-toggle svg {
+          width: 24px;
+          height: 24px;
+          fill: #fff;
+          transition: transform 0.3s ease;
+        }
+
+        .filter-toggle:hover svg {
+          fill: #000;
+        }
+
+        .filter-toggle.active svg {
+          transform: rotate(180deg);
+        }
+
+        #filters {
+          transition: transform 0.3s ease;
+        }
+
+        #filters.hidden {
+          transform: translateX(-100%);
+        }
+
+        @media only screen and (max-width: 480px) {
+          #filters {
+            display: block;
+            transform: translateX(-100%);
+          }
+          #filters.visible {
+            transform: translateX(0);
+          }
+        }
       </style>
     </div>
 
@@ -687,9 +750,9 @@ a,
             #map {
               width: 100%;
             }
-            /* #filters {
+            #filters {
               display: none;
-            } */
+            }
             .mapboxgl-ctrl-geocoder {
               display: none;
             }
@@ -757,6 +820,17 @@ a,
             href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
             type="text/css"
           />
+          <button
+            class="filter-toggle"
+            id="filterToggle"
+            aria-label="Toggle Filters"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
+              />
+            </svg>
+          </button>
           <div class="filters" id="filters">
             <a href="https://edgestone.in/" target="_blank">
               <img
@@ -1689,6 +1763,38 @@ a,
                   document.getElementsByClassName("mapboxgl-popup");
                 if (popups[0]) popups[0].remove();
               });
+            });
+
+            // Add filter toggle functionality
+            const filterToggle = document.getElementById("filterToggle");
+            const filtersPanel = document.getElementById("filters");
+
+            filterToggle.addEventListener("click", function () {
+              this.classList.toggle("active");
+              if (window.innerWidth <= 480) {
+                filtersPanel.classList.toggle("visible");
+              } else {
+                filtersPanel.classList.toggle("hidden");
+              }
+            });
+
+            // Update filters visibility on window resize
+            window.addEventListener("resize", function () {
+              if (window.innerWidth <= 480) {
+                filtersPanel.classList.remove("hidden");
+                if (filterToggle.classList.contains("active")) {
+                  filtersPanel.classList.add("visible");
+                } else {
+                  filtersPanel.classList.remove("visible");
+                }
+              } else {
+                filtersPanel.classList.remove("visible");
+                if (filterToggle.classList.contains("active")) {
+                  filtersPanel.classList.add("hidden");
+                } else {
+                  filtersPanel.classList.remove("hidden");
+                }
+              }
             });
           </script>
         </body>
