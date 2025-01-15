@@ -1,0 +1,37 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NEXTDC P1",
+        "description": "PoP",
+        "address": "NEXTDC P1\n101 Malaga Dr,\nMalaga,\nWA 6090,\nAustralia",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec08873846c2c4b548d_nextdc.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.895902032381699,
+          -31.864247023318459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix SY1",
+        "description": "PoP",
+        "address": "Equinix SY1\nUnit B/C,\n639 Gardeners Road,\nMascot,\nSydney,\nNSW 2020,\nAustralia",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.18819560213251,
+          -33.921417095698907
+        ]
+      }
+    }
+  ]
+}

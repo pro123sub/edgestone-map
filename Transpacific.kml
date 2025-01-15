@@ -1,0 +1,37 @@
+<kml>
+  <ns0:name xmlns:ns0="http://www.opengis.net/kml/2.2">Transpacific</ns0:name>
+  <ns1:open xmlns:ns1="http://www.opengis.net/kml/2.2">1</ns1:open>
+  <ns2:Placemark xmlns:ns2="http://www.opengis.net/kml/2.2">
+    <ns2:name>Coresite LA1 - AT Tokyo CC1 /nJUPITER</ns2:name>
+    <ns2:description>Subsea</ns2:description>
+    <ns2:styleUrl>#msn_ylw-pushpin11</ns2:styleUrl>
+    <ns2:LineString>
+      <ns2:tessellate>1</ns2:tessellate>
+      <ns2:coordinates>
+						139.790705668191,35.64786799344468,0 139.9358989009866,35.73780596601623,0 140.1509045360751,35.60176339652492,0 139.9746628060317,35.00584439796985,0 233.3276460968685,34.88082053745295,0 239.4167098503515,33.84996654326592,0 241.5971943081663,33.86171306652508,0 241.7442093953308,34.04803193142418,0 
+					</ns2:coordinates>
+    </ns2:LineString>
+  </ns2:Placemark>
+  <ns3:Placemark xmlns:ns3="http://www.opengis.net/kml/2.2">
+    <ns3:name>Coresite LA1 - Equinix TY2 /nFASTER</ns3:name>
+    <ns3:description>Subsea</ns3:description>
+    <ns3:styleUrl>#msn_ylw-pushpin11</ns3:styleUrl>
+    <ns3:LineString>
+      <ns3:tessellate>1</ns3:tessellate>
+      <ns3:coordinates>
+						139.7480928565461,35.61741703127967,0 139.6181731597961,35.48212491321915,0 139.5951130400109,35.3484047256137,0 139.8334998912225,35.30901849212786,0 139.892259053079,35.21538286680465,0 139.9532714427826,34.97402012924502,0 235.6162201409193,43.24781785633955,0 237.5098357403611,38.15437642105187,0 237.4503188650069,37.85310590350861,0 237.5787672573913,37.53966145807595,0 240.8502620149935,34.56183530818628,0 241.744165655534,34.04793329119844,0 
+					</ns3:coordinates>
+    </ns3:LineString>
+  </ns3:Placemark>
+  <ns4:Placemark xmlns:ns4="http://www.opengis.net/kml/2.2">
+    <ns4:name>Coresite LA1 - Equinix TY2 /nUnity</ns4:name>
+    <ns4:description>Subsea</ns4:description>
+    <ns4:styleUrl>#msn_ylw-pushpin11</ns4:styleUrl>
+    <ns4:LineString>
+      <ns4:tessellate>1</ns4:tessellate>
+      <ns4:coordinates>
+						139.7482471864757,35.61750613718351,0 139.935990030818,35.77174211110921,0 140.2037660564044,35.63533547658943,0 139.9603239420079,34.97073806782738,0 224.2096535159225,31.75654605318854,0 241.6026875099918,33.84581738845971,0 241.7444405525299,34.04813661866854,0 
+					</ns4:coordinates>
+    </ns4:LineString>
+  </ns4:Placemark>
+</kml>

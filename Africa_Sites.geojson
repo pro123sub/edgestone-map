@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+     {
+      "type": "Feature",
+      "properties": {
+        "name": "Teraco JB1",
+        "description": "PoP",
+        "address": "Teraco JB1\n5 Brewery St,\nIsando,\nKempton Park,\n1600,\nSouth Africa",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65562f2dddb143ac422cb985_Teraco.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.19772974503535, 
+          -26.13774591087882
+        ]
+      }
+    }
+  ]
+}
