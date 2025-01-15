@@ -421,7 +421,7 @@ a,
 
           /* Show All Cables button style */
           .show-all-cables {
-            display: block;
+            display: none; /* Hide by default */
             width: 90%;
             margin: 10px auto;
             padding: 10px;
@@ -438,6 +438,10 @@ a,
             background-image: linear-gradient(135deg, #1ed760, #00d7ff);
             color: #000;
             border-color: transparent;
+          }
+
+          .show-all-cables.visible {
+            display: block;
           }
 
           .controls {
@@ -1567,6 +1571,11 @@ a,
                 if (checkbox) checkbox.checked = true;
               });
               currentVisibleLine = null;
+
+              // Hide the Show All Cables button
+              document
+                .getElementById("showAllCables")
+                .classList.remove("visible");
             }
 
             function showOnlyLine(lineId) {
@@ -1580,12 +1589,22 @@ a,
                 if (checkbox) checkbox.checked = id === lineId;
               });
               currentVisibleLine = lineId;
+
+              // Show the Show All Cables button
+              document.getElementById("showAllCables").classList.add("visible");
             }
 
             // Show All Cables button click handler
             document
               .getElementById("showAllCables")
-              .addEventListener("click", showAllCables);
+              .addEventListener("click", function () {
+                // Check all cable checkboxes
+                mapFiles_LineStrings.forEach(function (lineId) {
+                  const checkbox = document.getElementById("control" + lineId);
+                  if (checkbox) checkbox.checked = true;
+                });
+                showAllCableLines();
+              });
 
             // Add click events for lines
             mapFiles_LineStrings.forEach(function (lineId) {
@@ -1616,6 +1635,10 @@ a,
                     map.setLayoutProperty(id, "visibility", "none");
                     map.setLayoutProperty(id + "_symbol", "visibility", "none");
                     currentVisibleLine = null;
+                    // Hide the Show All Cables button when unchecking
+                    document
+                      .getElementById("showAllCables")
+                      .classList.remove("visible");
                   }
                 } else {
                   // For points/sites, keep original behavior
