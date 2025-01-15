@@ -393,7 +393,7 @@ a,
             top: 0;
             bottom: 0;
 
-            width: 80%;
+            width: 100%;
           }
 
           .mapboxgl-ctrl-top-right {
@@ -673,9 +673,9 @@ a,
 
           /* Tablet styles */
           @media only screen and (max-width: 1220px) {
-            #map {
+            /* #map {
               width: 65%;
-            }
+            } */
 
             #filters {
               width: 35%;
@@ -687,9 +687,9 @@ a,
             #map {
               width: 100%;
             }
-            #filters {
+            /* #filters {
               display: none;
-            }
+            } */
             .mapboxgl-ctrl-geocoder {
               display: none;
             }
@@ -1245,9 +1245,7 @@ a,
                   .setHTML(
                     `
 <div style="background-color: #fff;  border-style: none; text-decoration: none; ">
-<img src="${
-                      "https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"
-                    }" style="display: block; margin-left: auto; margin-right: auto; height: 190px; width: 220px;">
+<img src="${"https://salmon-anteater-481014.hostingersite.com/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 190px; width: 220px;">
 <h4>Partner PoP at ${feature.properties.name}</h4>
 <p style="white-space: normal; word-wrap: break-word;">${feature.properties.address.replace(
                       /\n/g,
