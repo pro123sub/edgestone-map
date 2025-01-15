@@ -419,6 +419,27 @@ a,
             height: 100%;
           }
 
+          /* Show All Cables button style */
+          .show-all-cables {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #cacece;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+          }
+
+          .show-all-cables:hover {
+            background-image: linear-gradient(135deg, #1ed760, #00d7ff);
+            color: #000;
+            border-color: transparent;
+          }
+
           .controls {
             position: relative;
             top: 0;
@@ -739,7 +760,9 @@ a,
                 alt="Logo"
                 style="width: 100px; height: auto"
             /></a>
-            <!-- <div id="geocoder" class="mapboxgl-ctrl-geocoder"></div> -->
+            <button id="showAllCables" class="show-all-cables">
+              Show All Cables
+            </button>
             <div class="controls" id="controls">
               <div class="collapsible">
                 PoPs
@@ -1526,6 +1549,127 @@ a,
             map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
             map.dragRotate.disable(); // disable map rotation using right click + drag
             map.touchZoomRotate.disableRotation(); // disable map rotation using touch rotation gesture
+
+            // Add click events for lines and show all cables functionality
+            let currentVisibleLine = null;
+
+            function showAllCableLines() {
+              mapFiles_LineStrings.forEach(function (lineId) {
+                map.setLayoutProperty(lineId, "visibility", "visible");
+                map.setLayoutProperty(
+                  lineId + "_symbol",
+                  "visibility",
+                  "visible"
+                );
+
+                // Update checkboxes
+                const checkbox = document.getElementById("control" + lineId);
+                if (checkbox) checkbox.checked = true;
+              });
+              currentVisibleLine = null;
+            }
+
+            function showOnlyLine(lineId) {
+              mapFiles_LineStrings.forEach(function (id) {
+                const visibility = id === lineId ? "visible" : "none";
+                map.setLayoutProperty(id, "visibility", visibility);
+                map.setLayoutProperty(id + "_symbol", "visibility", visibility);
+
+                // Update checkboxes
+                const checkbox = document.getElementById("control" + id);
+                if (checkbox) checkbox.checked = id === lineId;
+              });
+              currentVisibleLine = lineId;
+            }
+
+            // Show All Cables button click handler
+            document
+              .getElementById("showAllCables")
+              .addEventListener("click", showAllCables);
+
+            // Add click events for lines
+            mapFiles_LineStrings.forEach(function (lineId) {
+              map.on("click", lineId, function (e) {
+                e.preventDefault();
+                if (currentVisibleLine === lineId) {
+                  showAllCableLines();
+                } else {
+                  showOnlyLine(lineId);
+                }
+              });
+            });
+
+            // Modify checkbox event listeners for lines
+            var checkboxes = document.querySelectorAll(
+              "input[type='checkbox']"
+            );
+            checkboxes.forEach(function (checkbox) {
+              checkbox.addEventListener("change", function () {
+                var id = this.id.replace("control", "");
+                var visibility = this.checked ? "visible" : "none";
+
+                // If this is a line layer (not a point/site layer)
+                if (!id.includes("Sites") && !id.includes("offices")) {
+                  if (this.checked) {
+                    showOnlyLine(id);
+                  } else {
+                    map.setLayoutProperty(id, "visibility", "none");
+                    map.setLayoutProperty(id + "_symbol", "visibility", "none");
+                    currentVisibleLine = null;
+                  }
+                } else {
+                  // For points/sites, keep original behavior
+                  map.setLayoutProperty(id, "visibility", visibility);
+                  map.setLayoutProperty(
+                    id + "_points",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_clusters",
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    id + "_cluster-count",
+                    "visibility",
+                    visibility
+                  );
+                }
+              });
+            });
+
+            // Add hover events for lines
+            mapFiles_LineStrings.forEach(function (lineId) {
+              map.on("mouseenter", lineId, function (e) {
+                map.getCanvas().style.cursor = "pointer";
+
+                const description = e.features[0].properties.description;
+                if (description) {
+                  const coordinates = e.lngLat;
+
+                  new mapboxgl.Popup({
+                    closeButton: false,
+                    closeOnClick: false,
+                    className: "line-popup",
+                  })
+                    .setLngLat(coordinates)
+                    .setHTML(
+                      `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
+                            ${description}
+                           </div>`
+                    )
+                    .addTo(map);
+                }
+              });
+
+              map.on("mouseleave", lineId, function () {
+                map.getCanvas().style.cursor = "";
+                const popups =
+                  document.getElementsByClassName("mapboxgl-popup");
+                if (popups[0]) popups[0].remove();
+              });
+            });
           </script>
         </body>
       </html>
