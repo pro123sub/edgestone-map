@@ -426,6 +426,60 @@ a,
             transform: translateX(0);
           }
         }
+
+        /* Add cable search styles */
+        .cable-search {
+          width: 90%;
+          margin: 10px auto;
+          padding: 10px;
+          position: relative;
+        }
+
+        .cable-search input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #cacece;
+          border-radius: 4px;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+
+        .cable-search input:focus {
+          outline: none;
+          border-color: #ff642c;
+        }
+
+        .search-results {
+          max-height: 200px;
+          overflow-y: auto;
+          background: white;
+          border: 1px solid #cacece;
+          border-radius: 4px;
+          display: none;
+          position: absolute;
+          width: 100%;
+          z-index: 9999;
+        }
+
+        .search-result-item {
+          padding: 8px;
+          cursor: pointer;
+          border-bottom: 1px solid #eee;
+        }
+
+        .search-result-item:hover {
+          background-color: #f5f5f5;
+        }
+
+        .search-result-item:last-child {
+          border-bottom: none;
+        }
+
+        .no-results {
+          padding: 8px;
+          color: #666;
+          font-style: italic;
+        }
       </style>
     </div>
 
@@ -830,6 +884,14 @@ a,
                 alt="Logo"
                 style="width: 100px; height: auto"
             /></a>
+            <div class="cable-search">
+              <input
+                type="text"
+                id="cableSearch"
+                placeholder="Search cables..."
+              />
+              <div id="searchResults" class="search-results"></div>
+            </div>
             <button id="showAllCables" class="show-all-cables">
               Show All Cables
             </button>
@@ -1373,6 +1435,102 @@ a,
               zoomInBtn.disabled = currentZoom >= map.getMaxZoom();
               zoomOutBtn.disabled = currentZoom <= map.getMinZoom();
             });
+
+            // Cable search functionality
+            const cableSearch = document.getElementById("cableSearch");
+            const searchResults = document.getElementById("searchResults");
+
+            // Function to get all cable data
+            function getAllCableData() {
+              const cables = [];
+              mapFiles_LineStrings.forEach((lineId) => {
+                const source = map.getSource(lineId);
+                if (source) {
+                  const features = source._data.features;
+                  features.forEach((feature) => {
+                    cables.push({
+                      id: lineId,
+                      name: feature.properties.Name,
+                      description: feature.properties.description || "",
+                    });
+                  });
+                }
+              });
+              return cables;
+            }
+
+            // Function to filter cables
+            function filterCables(searchTerm) {
+              const cables = getAllCableData();
+              return cables.filter((cable) => {
+                const searchString = searchTerm.toLowerCase();
+                return (
+                  cable.name.toLowerCase().includes(searchString) ||
+                  cable.description.toLowerCase().includes(searchString)
+                );
+              });
+            }
+
+            // Function to display search results
+            function displaySearchResults(results) {
+              if (results.length === 0) {
+                searchResults.innerHTML =
+                  '<div class="no-results">No cables found</div>';
+              } else {
+                searchResults.innerHTML = results
+                  .map(
+                    (cable) => `
+                  <div class="search-result-item" data-cable-id="${cable.id}">
+                    <strong>${cable.name}</strong>
+                    ${
+                      cable.description
+                        ? `<br><small>${cable.description}</small>`
+                        : ""
+                    }
+                  </div>
+                `
+                  )
+                  .join("");
+              }
+              searchResults.style.display = "block";
+            }
+
+            // Search input event handler
+            cableSearch.addEventListener("input", (e) => {
+              const searchTerm = e.target.value.trim();
+              if (searchTerm === "") {
+                searchResults.style.display = "none";
+                return;
+              }
+              const results = filterCables(searchTerm);
+              displaySearchResults(results);
+            });
+
+            // Click handler for search results
+            searchResults.addEventListener("click", (e) => {
+              const resultItem = e.target.closest(".search-result-item");
+              if (resultItem) {
+                const cableId = resultItem.dataset.cableId;
+                showOnlyLine(cableId);
+                searchResults.style.display = "none";
+                cableSearch.value = "";
+              }
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener("click", (e) => {
+              if (!e.target.closest(".cable-search")) {
+                searchResults.style.display = "none";
+              }
+            });
+
+            // Clear search when showing all cables
+            document
+              .getElementById("showAllCables")
+              .addEventListener("click", () => {
+                cableSearch.value = "";
+                searchResults.style.display = "none";
+              });
           </script>
         </body>
       </html>
