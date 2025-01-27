@@ -816,7 +816,12 @@ a,
             class="filter-toggle"
             id="filterToggle"
             aria-label="Toggle Filters"
-            style="display: flex; align-items: center; justify-content: center; gap: 10px;"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+            "
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
@@ -1629,14 +1634,24 @@ a,
             const filtersPanel = document.getElementById("filters");
             const filterText = document.getElementById("filterText");
 
+            filterText.style.color = "#fff";
+
             filterToggle.addEventListener("click", function () {
               this.classList.toggle("active");
               if (window.innerWidth <= 480) {
                 filtersPanel.classList.toggle("visible");
-                filterText.textContent = filtersPanel.classList.contains("visible") ? "Hide Filters" : "Show Filters";
+                filterText.textContent = filtersPanel.classList.contains(
+                  "visible"
+                )
+                  ? "Hide Filters"
+                  : "Show Filters";
               } else {
                 filtersPanel.classList.toggle("hidden");
-                filterText.textContent = filtersPanel.classList.contains("hidden") ? "Show Filters" : "Hide Filters";
+                filterText.textContent = filtersPanel.classList.contains(
+                  "hidden"
+                )
+                  ? "Show Filters"
+                  : "Hide Filters";
               }
             });
 
