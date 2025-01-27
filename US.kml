@@ -1,0 +1,80 @@
+<kml>
+  <ns0:name xmlns:ns0="http://www.opengis.net/kml/2.2">US</ns0:name>
+  <ns1:Placemark xmlns:ns1="http://www.opengis.net/kml/2.2">
+    <ns1:name>Equinix SV1 - Coresite LA1</ns1:name>
+    <ns1:description>Terrestrial</ns1:description>
+    <ns1:styleUrl>#msn_ylw-pushpin20</ns1:styleUrl>
+    <ns1:LineString>
+      <ns1:tessellate>1</ns1:tessellate>
+      <ns1:coordinates>
+						-118.2556093814084,34.04791052275036,0 -121.7832308876765,37.24162784677959,0 
+					</ns1:coordinates>
+    </ns1:LineString>
+  </ns1:Placemark>
+  <ns2:Placemark xmlns:ns2="http://www.opengis.net/kml/2.2">
+    <ns2:name>Coresite LA1 - Equinix MI1</ns2:name>
+    <ns2:description>Terrestrial</ns2:description>
+    <ns2:styleUrl>#msn_ylw-pushpin20</ns2:styleUrl>
+    <ns2:LineString>
+      <ns2:tessellate>1</ns2:tessellate>
+      <ns2:coordinates>
+						-118.255315747484,34.04811035558801,0 -83.88545575967645,30.54163333423752,0 -82.68777198185003,29.83619908019558,0 -81.00111325803178,25.77607607858973,0 -80.19331696179461,25.78227601764324,0 
+					</ns2:coordinates>
+    </ns2:LineString>
+  </ns2:Placemark>
+  <ns3:Placemark xmlns:ns3="http://www.opengis.net/kml/2.2">
+    <ns3:name>Equinix MI1 - Digital Realty NYC2</ns3:name>
+    <ns3:description>Terrestrial</ns3:description>
+    <ns3:styleUrl>#msn_ylw-pushpin20</ns3:styleUrl>
+    <ns3:LineString>
+      <ns3:tessellate>1</ns3:tessellate>
+      <ns3:coordinates>
+						-80.19301040327544,25.78265390643315,0 -81.98738595717151,31.19163675824034,0 -76.82681732373275,39.20074522590107,0 -74.00214803819195,40.74090368961922,0 
+					</ns3:coordinates>
+    </ns3:LineString>
+  </ns3:Placemark>
+  <ns4:Placemark xmlns:ns4="http://www.opengis.net/kml/2.2">
+    <ns4:name>Digital Realty NYC2 - Equinix CH1</ns4:name>
+    <ns4:description>Terrestrial</ns4:description>
+    <ns4:styleUrl>#msn_ylw-pushpin20</ns4:styleUrl>
+    <ns4:LineString>
+      <ns4:tessellate>1</ns4:tessellate>
+      <ns4:coordinates>
+						-74.0042337948189,40.7419560811397,0 -78.89733779740995,42.31381899235072,0 -82.14413003866305,41.11909526498327,0 -87.47063898326411,41.46511552916484,0 -87.61791647155799,41.85242707782078,0 
+					</ns4:coordinates>
+    </ns4:LineString>
+  </ns4:Placemark>
+  <ns5:Placemark xmlns:ns5="http://www.opengis.net/kml/2.2">
+    <ns5:name>Equinix CH1 - Equinix SV1</ns5:name>
+    <ns5:description>Terrestrial</ns5:description>
+    <ns5:styleUrl>#msn_ylw-pushpin20</ns5:styleUrl>
+    <ns5:LineString>
+      <ns5:tessellate>1</ns5:tessellate>
+      <ns5:coordinates>
+						-87.61848483800362,41.85443550047405,0 -104.9957988158158,39.74547515694688,0 -122.3980807966987,37.72339692732175,0 -122.3878016684693,37.58387209379206,0 -122.0287048970692,37.38471935506472,0 -121.7835547754668,37.24146608004502,0 
+					</ns5:coordinates>
+    </ns5:LineString>
+  </ns5:Placemark>
+  <ns6:Placemark xmlns:ns6="http://www.opengis.net/kml/2.2">
+    <ns6:name>Digital Realty NYC2 - Coresite LA1 #1</ns6:name>
+    <ns6:description>Terrestrial</ns6:description>
+    <ns6:styleUrl>#msn_ylw-pushpin20</ns6:styleUrl>
+    <ns6:LineString>
+      <ns6:tessellate>1</ns6:tessellate>
+      <ns6:coordinates>
+						-74.00336708371526,40.74143459864189,0 -115.2114912077508,36.06002355040874,0 -118.2555535505265,34.04827454487684,0 
+					</ns6:coordinates>
+    </ns6:LineString>
+  </ns6:Placemark>
+  <ns7:Placemark xmlns:ns7="http://www.opengis.net/kml/2.2">
+    <ns7:name>Digital Realty NYC2 - Coresite LA1 #2</ns7:name>
+    <ns7:description>Terrestrial</ns7:description>
+    <ns7:styleUrl>#msn_ylw-pushpin20</ns7:styleUrl>
+    <ns7:LineString>
+      <ns7:tessellate>1</ns7:tessellate>
+      <ns7:coordinates>
+						-74.00290302506434,40.74122173710604,0 -101.7879385603682,35.44217765472749,0 -118.2553805204472,34.04815730297678,0 
+					</ns7:coordinates>
+    </ns7:LineString>
+  </ns7:Placemark>
+</kml>

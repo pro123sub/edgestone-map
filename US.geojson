@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "US-cables",
+"features": [
+{ "type": "Feature", "properties": { "Name": "Equinix SV1 - Coresite LA1", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -118.255609381408405, 34.047910522750357, 0.0 ], [ -121.783230887676496, 37.241627846779593, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Equinix LA1 - Coresite LA1", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -118.257206877861407, 34.047454317614459, 0.0 ], [ -118.2556723324535, 34.048177731221081, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Coresite LA1 - Equinix MI1", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -118.255315747484005, 34.048110355588008, 0.0 ], [ -83.885455759676447, 30.54163333423752, 0.0 ], [ -82.687771981850034, 29.836199080195581, 0.0 ], [ -81.001113258031779, 25.776076078589728, 0.0 ], [ -80.193316961794608, 25.782276017643241, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Equinix MI1 - Digital Realty NYC2", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -80.193010403275437, 25.782653906433151, 0.0 ], [ -81.987385957171512, 31.191636758240339, 0.0 ], [ -76.826817323732755, 39.200745225901073, 0.0 ], [ -74.002148038191947, 40.740903689619223, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Digital Realty NYC2 - Equinix CH1", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -74.004233794818902, 40.741956081139698, 0.0 ], [ -78.897337797409946, 42.313818992350718, 0.0 ], [ -82.14413003866305, 41.119095264983272, 0.0 ], [ -87.470638983264109, 41.465115529164841, 0.0 ], [ -87.61791647155799, 41.852427077820778, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Equinix CH1 - Equinix SV1", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -87.618484838003624, 41.854435500474047, 0.0 ], [ -104.995798815815803, 39.745475156946881, 0.0 ], [ -122.398080796698693, 37.723396927321751, 0.0 ], [ -122.387801668469294, 37.58387209379206, 0.0 ], [ -122.028704897069204, 37.384719355064718, 0.0 ], [ -121.783554775466797, 37.241466080045022, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Digital Realty NYC2 - Coresite LA1 #1", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -74.003367083715261, 40.741434598641888, 0.0 ], [ -115.211491207750797, 36.060023550408737, 0.0 ], [ -118.2555535505265, 34.04827454487684, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Digital Realty NYC2 - Coresite LA1 #2", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -74.002903025064342, 40.741221737106038, 0.0 ], [ -101.787938560368204, 35.442177654727487, 0.0 ], [ -118.255380520447204, 34.048157302976783, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Equinix DC2 - Digital Realty NYC2", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -77.45822977130068, 39.016181183477627, 0.0 ], [ -74.002325689473764, 40.740952973230193, 0.0 ] ] } },
+{ "type": "Feature", "properties": { "Name": "Equinix DC2 - Equinix MI1", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -77.459050258643103, 39.016305209780562, 0.0 ], [ -82.693617879695239, 30.961568308090399, 0.0 ], [ -80.193421999130166, 25.782552849167409, 0.0 ] ] } }
+]
+}
+
+

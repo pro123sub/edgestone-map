@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+     {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix SP3",
+        "description": "PoP",
+        "address": "Equinix SP3\nAv. Marcos Penteado de Ulhoa Rodrigues, 249,\nSantana de Parnaiba/SP CEP,\n06543-001,\nBrasil",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.863336974669522, 
+          -23.4663712516301
+        ]
+      }
+    }
+  ]
+}

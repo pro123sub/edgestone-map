@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix CH1",
+        "description": "PoP",
+        "address": "Equinix CH1\n350 E Cermak Rd,\n5th Floor,\nChicago, IL 60616,\nUnited States of America",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+  
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.61831862453664,
+          41.85362519053021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Digital Realty NYC2",
+        "description": "PoP",
+        "address": "Digital Realty NYC2\n111 8th Avenue,\nNew York, NY 10011,\nUnited States of America",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec0f58144cbcb907838_drt.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00214030540276,
+          40.74097220607835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix SV1",
+        "description": "PoP",
+        "address": "Equinix SV1\n11 Great Oaks Boulevard,\nSan Jose, CA 95119,\nUnited States of America",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7832371989034,
+          37.24164237763161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Coresite LA1",
+        "description": "PoP",
+        "address": "Coresite LA1\n624 South Grand Avenue,\nLos Angeles, CA 90017,\nUnited States of America",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec0636a75cc1ef669a1_coresite.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.2556288507544,
+          34.04790385396003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix DC2",
+        "description": "PoP",
+        "address": "Equinix DC2\n21715 Filigree Court,\nAshburn, VA 20147,\nUnited States of America",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.459219093462153, 
+          39.01647540352532
+        ]
+      }
+    },
+   {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix LA1",
+        "description": "PoP",
+        "address": "Equinix LA1\n600 W 7th Street,\nLos Angeles, CA 90017,\nUnited States of America",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.257560671597702, 
+          34.047534698827093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix MI1",
+        "description": "PoP",
+        "address": "Equinix MI1\n50 NE 9th Street,\nMiami, FL 33132,\nUnited States of America",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.19303565021939,
+          25.7823398912143
+        ]
+      }
+    }
+  ]
+}

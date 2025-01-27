@@ -1,0 +1,149 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix AM7",
+        "description": "PoP",
+        "address": "Equinix AM7\nKuiperbergweg 13,\nAmsterdam 1101 AE,\nNetherlands",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.938282184514011,
+          52.30322771874737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix FR5",
+        "description": "PoP",
+        "address": "Equinix FR5\nKleyerstrasse 90,\n60326 Frankfurt am Main,\nGermany",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.632189530894493,
+          50.09903534944407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix LD8",
+        "description": "PoP",
+        "address": "Equinix LD8\n6/7/8/9 Harbour Exchange Square,\nLimeharbour,\nLondon,\nE14 9GE\nUnited Kingdom",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.01493845432955831,
+          51.49819917580915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Equinix PA2",
+        "description": "PoP",
+        "address": "Equinix PA2\n114 Rue Ambroise Croizat,\n93200 Saint-Denis,\nFrance",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec085da1d25d6824bc3_equinix.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.350527361881352,
+          48.92718989819955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Digital Realty AMS9",
+        "description": "PoP",
+        "address": "Digital Realty AMS9\nScience Park 121,\nAmsterdam 1098 XG,\nNetherlands",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec0f58144cbcb907838_drt.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.952539736572823,
+          52.35633741927099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Digital Realty FRA8",
+        "description": "PoP",
+        "address": "Digital Realty FRA8\nWeissmuellerstrasse 36,\n60314 Frankfurt am Main,\nGermany",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec0f58144cbcb907838_drt.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.73769612300798,
+          50.11921011091021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Digital Realty MRS1",
+        "description": "PoP",
+        "address": "Digital Realty MRS1\n40 Avenue Roger Salengro,\nMarseille 13003,\nFrance",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec0f58144cbcb907838_drt.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.373827881529659,
+          43.31101742375835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Telehouse North",
+        "description": "PoP",
+        "address": "Telehouse North\nCoriander Avenue,\nPoplar,\nLondon,\nE14 2AA,\nUnited Kingdom",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec1da25c8a8074fbc3d_telehouse.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.001975912699309079,
+          51.51211008650436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Telehouse Voltaire",
+        "description": "PoP",
+        "address": "Telehouse Voltaire\n137 Boulevard Voltaire,\nParis 75011,\nFrance",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/64adbec1da25c8a8074fbc3d_telehouse.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.384388524776042,
+          48.85624823365207
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<kml>
+  <ns0:Folder xmlns:ns0="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <ns0:name>Sites</ns0:name>
+    <ns0:Placemark>
+      <ns0:name>Equinix CH1</ns0:name>
+      <ns0:description>PoP</ns0:description>
+      <ns0:LookAt>
+        <ns0:longitude>-87.61832810029438</ns0:longitude>
+        <ns0:latitude>41.85311349981674</ns0:latitude>
+        <ns0:altitude>0</ns0:altitude>
+        <ns0:heading>-1.964274790031701e-10</ns0:heading>
+        <ns0:tilt>0</ns0:tilt>
+        <ns0:range>1000.000002988247</ns0:range>
+        <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+      </ns0:LookAt>
+      <ns0:styleUrl>#m_ylw-pushpin00</ns0:styleUrl>
+      <ns0:Point>
+        <gx:drawOrder>1</gx:drawOrder>
+        <ns0:coordinates>-87.61831862453664,41.85362519053021,0</ns0:coordinates>
+      </ns0:Point>
+    </ns0:Placemark>
+    <ns0:Placemark>
+      <ns0:name>Digital Realty NYC2</ns0:name>
+      <ns0:description>PoP</ns0:description>
+      <ns0:LookAt>
+        <ns0:longitude>-74.00208557965344</ns0:longitude>
+        <ns0:latitude>40.7410689617524</ns0:latitude>
+        <ns0:altitude>0</ns0:altitude>
+        <ns0:heading>-0.008445088006935149</ns0:heading>
+        <ns0:tilt>24.71571070662775</ns0:tilt>
+        <ns0:range>372.128914729357</ns0:range>
+        <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+      </ns0:LookAt>
+      <ns0:styleUrl>#m_ylw-pushpin00</ns0:styleUrl>
+      <ns0:Point>
+        <gx:drawOrder>1</gx:drawOrder>
+        <ns0:coordinates>-74.00214030540276,40.74097220607835,0</ns0:coordinates>
+      </ns0:Point>
+    </ns0:Placemark>
+    <ns0:Placemark>
+      <ns0:name>Equinix SV1</ns0:name>
+      <ns0:description>PoP</ns0:description>
+      <ns0:LookAt>
+        <ns0:longitude>-121.7834678549115</ns0:longitude>
+        <ns0:latitude>37.24154704512534</ns0:latitude>
+        <ns0:altitude>0</ns0:altitude>
+        <ns0:heading>-0.0008847483345310353</ns0:heading>
+        <ns0:tilt>0.136622216944195</ns0:tilt>
+        <ns0:range>1000.781400059613</ns0:range>
+        <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+      </ns0:LookAt>
+      <ns0:styleUrl>#m_ylw-pushpin00</ns0:styleUrl>
+      <ns0:Point>
+        <gx:drawOrder>1</gx:drawOrder>
+        <ns0:coordinates>-121.7832371989034,37.24164237763161,0</ns0:coordinates>
+      </ns0:Point>
+    </ns0:Placemark>
+    <ns0:Placemark>
+      <ns0:name>Coresite LA1</ns0:name>
+      <ns0:description>PoP</ns0:description>
+      <ns0:LookAt>
+        <ns0:longitude>-118.2554710576467</ns0:longitude>
+        <ns0:latitude>34.04772382561666</ns0:latitude>
+        <ns0:altitude>0</ns0:altitude>
+        <ns0:heading>4.956175406965375e-05</ns0:heading>
+        <ns0:tilt>25.79924384521465</ns0:tilt>
+        <ns0:range>192.8220304482649</ns0:range>
+        <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+      </ns0:LookAt>
+      <ns0:styleUrl>#m_ylw-pushpin00</ns0:styleUrl>
+      <ns0:Point>
+        <gx:drawOrder>1</gx:drawOrder>
+        <ns0:coordinates>-118.2556288507544,34.04790385396003,0</ns0:coordinates>
+      </ns0:Point>
+    </ns0:Placemark>
+    <ns0:Placemark>
+      <ns0:name>Equinix MI1</ns0:name>
+      <ns0:description>PoP</ns0:description>
+      <ns0:LookAt>
+        <ns0:longitude>-80.19303565021939</ns0:longitude>
+        <ns0:latitude>25.7823398912143</ns0:latitude>
+        <ns0:altitude>0</ns0:altitude>
+        <ns0:heading>3.660761515898108e-05</ns0:heading>
+        <ns0:tilt>20.82606179397432</ns0:tilt>
+        <ns0:range>337.2613109768525</ns0:range>
+        <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+      </ns0:LookAt>
+      <ns0:styleUrl>#m_ylw-pushpin00</ns0:styleUrl>
+      <ns0:Point>
+        <gx:drawOrder>1</gx:drawOrder>
+        <ns0:coordinates>-80.19303565021939,25.7823398912143,0</ns0:coordinates>
+      </ns0:Point>
+    </ns0:Placemark>
+  </ns0:Folder>
+</kml>
