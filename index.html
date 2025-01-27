@@ -426,6 +426,72 @@ a,
             transform: translateX(0);
           }
         }
+
+        /* Tower Toggle Switch Styles */
+        .tower-control {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 18px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tower-label {
+          font-size: 16px;
+          color: #333;
+        }
+
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: 0.4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: 0.4s;
+        }
+
+        input:checked + .slider {
+          background-color: #ff642c;
+        }
+
+        input:checked + .slider:before {
+          transform: translateX(26px);
+        }
+
+        .slider.round {
+          border-radius: 34px;
+        }
+
+        .slider.round:before {
+          border-radius: 50%;
+        }
       </style>
     </div>
 
@@ -834,6 +900,13 @@ a,
               Show All Cables
             </button>
             <div class="controls" id="controls">
+              <div class="tower-control">
+                <span class="tower-label">Show All Towers</span>
+                <label class="switch">
+                  <input type="checkbox" id="towerToggle" checked />
+                  <span class="slider round"></span>
+                </label>
+              </div>
               <div class="collapsible">
                 PoPs
                 <span class="toggle-icon">-</span>
@@ -866,6 +939,14 @@ a,
                     checked
                   />
                   South America Sites
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="controlpartner-sites-layer"
+                    checked
+                  />
+                  Partner Sites
                 </label>
               </div>
               <div class="collapsible">
@@ -1016,6 +1097,7 @@ a,
               "SouthAmerica_Sites",
             ];
             var mapFiles_Offices = ["offices"];
+            var mapFiles_Partners = ["Partner_Sites"];
             const map = new mapboxgl.Map({
               container: "map",
               style:
@@ -1041,6 +1123,81 @@ a,
             });
 
             map.on("load", function () {
+              // Create tower icon as SVG data URL
+              const towerSvg = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L8 6H11V14.17L6.12 19.05C5.73 19.44 5.73 20.07 6.12 20.46C6.51 20.85 7.14 20.85 7.53 20.46L12 15.99L16.47 20.46C16.86 20.85 17.49 20.85 17.88 20.46C18.27 20.07 18.27 19.44 17.88 19.05L13 14.17V6H16L12 2Z" fill="#ff642c"/>
+                  <path d="M12 2L8 6H11V14.17L6.12 19.05C5.73 19.44 5.73 20.07 6.12 20.46C6.51 20.85 7.14 20.85 7.53 20.46L12 15.99L16.47 20.46C16.86 20.85 17.49 20.85 17.88 20.46C18.27 20.07 18.27 19.44 17.88 19.05L13 14.17V6H16L12 2Z" fill="white" fill-opacity="0.3"/>
+                </svg>
+              `)}`;
+
+              const towerImage = new Image();
+              towerImage.onload = () => {
+                map.addImage("tower-marker", towerImage);
+
+                // Add partner sites source and layer
+                map.addSource("partner-sites", {
+                  type: "geojson",
+                  data: "Partner_Sites.geojson",
+                });
+
+                map.addLayer({
+                  id: "partner-sites-layer",
+                  type: "symbol",
+                  source: "partner-sites",
+                  layout: {
+                    "icon-image": "tower-marker",
+                    "icon-size": 1.2,
+                    "icon-allow-overlap": true,
+                    "text-field": ["get", "name"],
+                    "text-offset": [0, 1.5],
+                    "text-anchor": "top",
+                    "text-size": 12,
+                  },
+                  paint: {
+                    "text-color": "#ffffff",
+                    "text-halo-color": "#000000",
+                    "text-halo-width": 1,
+                  },
+                });
+
+                // Add hover events for partner sites
+                map.on("mouseenter", "partner-sites-layer", (e) => {
+                  map.getCanvas().style.cursor = "pointer";
+                  const coordinates =
+                    e.features[0].geometry.coordinates.slice();
+                  const description = e.features[0].properties.description;
+                  const name = e.features[0].properties.name;
+                  const country = e.features[0].properties.country;
+
+                  new mapboxgl.Popup({
+                    className: "point-popup",
+                    offset: 15,
+                    focusAfterOpen: false,
+                  })
+                    .setLngLat(coordinates)
+                    .setHTML(
+                      `
+                      <div style="background-color: #fff; border-style: none; text-decoration: none;">
+                        <img src="https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png" style="display: block; margin-left: auto; margin-right: auto; height: 110px; width: 110px;">
+                        <h4>${name}</h4>
+                        <p style="white-space: normal; word-wrap: break-word;">${description}<br>${country}</p>
+                      </div>
+                    `
+                    )
+                    .addTo(map);
+                });
+
+                map.on("mouseleave", "partner-sites-layer", () => {
+                  map.getCanvas().style.cursor = "";
+                  const popups =
+                    document.getElementsByClassName("mapboxgl-popup");
+                  if (popups[0]) popups[0].remove();
+                });
+              };
+              towerImage.src = towerSvg;
+
+              // Load existing layers
               for (let i = 0; i < mapFiles_LineStrings.length; i++) {
                 filename = mapFiles_LineStrings[i];
                 addLineLayer(filename, lineStringColors[i]);
@@ -1373,6 +1530,80 @@ a,
               zoomInBtn.disabled = currentZoom >= map.getMaxZoom();
               zoomOutBtn.disabled = currentZoom <= map.getMinZoom();
             });
+
+            // Add this after map initialization
+            document
+              .getElementById("towerToggle")
+              .addEventListener("change", function (e) {
+                const isChecked = e.target.checked;
+
+                // Handle tower visibility
+                map.setLayoutProperty(
+                  "partner-sites-layer",
+                  "visibility",
+                  isChecked ? "visible" : "none"
+                );
+
+                // Update tower checkbox in the filters
+                document.getElementById("controlpartner-sites-layer").checked =
+                  isChecked;
+
+                if (isChecked) {
+                  // Hide all other layers when towers are shown
+                  mapFiles_LineStrings.forEach(function (lineId) {
+                    map.setLayoutProperty(lineId, "visibility", "none");
+                    map.setLayoutProperty(
+                      lineId + "_symbol",
+                      "visibility",
+                      "none"
+                    );
+                    document.getElementById("control" + lineId).checked = false;
+                  });
+
+                  mapFiles_Points.forEach(function (pointId) {
+                    map.setLayoutProperty(
+                      pointId + "_points",
+                      "visibility",
+                      "none"
+                    );
+                    map.setLayoutProperty(
+                      pointId + "_clusters",
+                      "visibility",
+                      "none"
+                    );
+                    map.setLayoutProperty(
+                      pointId + "_cluster-count",
+                      "visibility",
+                      "none"
+                    );
+                    document.getElementById(
+                      "control" + pointId
+                    ).checked = false;
+                  });
+
+                  // Hide offices
+                  mapFiles_Offices.forEach(function (officeId) {
+                    map.setLayoutProperty(
+                      officeId + "_points",
+                      "visibility",
+                      "none"
+                    );
+                    if (document.getElementById("control" + officeId)) {
+                      document.getElementById(
+                        "control" + officeId
+                      ).checked = false;
+                    }
+                  });
+                }
+              });
+
+            // Update the tower toggle when the checkbox in filters is clicked
+            document
+              .getElementById("controlpartner-sites-layer")
+              .addEventListener("change", function (e) {
+                document.getElementById("towerToggle").checked =
+                  e.target.checked;
+              });
           </script>
         </body>
       </html>

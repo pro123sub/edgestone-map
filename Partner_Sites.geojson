@@ -1,0 +1,135 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dubai Partner Site",
+        "description": "Partner Tower",
+        "country": "UAE",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [55.2708, 25.2048]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Riyadh Partner Site",
+        "description": "Partner Tower",
+        "country": "SAUDI ARABIA",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [46.6753, 24.7136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nicosia Partner Site",
+        "description": "Partner Tower",
+        "country": "CYPRUS",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [33.3823, 35.1856]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Frankfurt Partner Site",
+        "description": "Partner Tower",
+        "country": "GERMANY",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8.6821, 50.1109]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zurich Partner Site",
+        "description": "Partner Tower",
+        "country": "SWITZERLAND",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8.5417, 47.3769]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nairobi Partner Site",
+        "description": "Partner Tower",
+        "country": "KENYA",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.8219, -1.2921]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Singapore Partner Site",
+        "description": "Partner Tower",
+        "country": "SINGAPORE",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.8198, 1.3521]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Islamabad Partner Site",
+        "description": "Partner Tower",
+        "country": "PAKISTAN",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.0479, 33.6844]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "London Partner Site",
+        "description": "Partner Tower",
+        "country": "UK",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1276, 51.5074]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sydney Partner Site",
+        "description": "Partner Tower",
+        "country": "AUSTRALIA",
+        "image": "https://uploads-ssl.webflow.com/6453980466edcb7b60b5acc6/65776401c7f7a5fa70f7e240_tower.svg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [151.2093, -33.8688]
+      }
+    }
+  ]
+}
