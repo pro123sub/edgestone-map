@@ -391,7 +391,7 @@ a,
         }
 
         .filter-toggle:hover {
-          background-image: #FF642C;
+          background-image: #ff642c;
         }
 
         .filter-toggle svg {
@@ -498,7 +498,7 @@ a,
           }
 
           .show-all-cables:hover {
-            background-image: #FF642C;
+            background-image: #ff642c;
             color: white;
             border-color: transparent;
           }
@@ -623,8 +623,8 @@ a,
             cursor: pointer;
             padding: 10px 20px;
             text-decoration: none;
-            background-color: #FF642C;
-            background-image: #FF642C;
+            background-color: #ff642c;
+            background-image: #ff642c;
           }
 
           .point-popup a:visited {
@@ -636,10 +636,6 @@ a,
             text-decoration: none;
           }
 
-          .point-popup:hover {
-            background: #FF642C;
-          }
-
           .mapboxgl-popup-close-button {
             padding: 5px 10px;
             font-size: 24px;
@@ -649,7 +645,6 @@ a,
           .mapboxgl-popup-close-button:hover {
             background-color: transparent;
             font-size: 24px;
-            color: white; /* cross colour */
           }
 
           .pop_detail.visible {
@@ -670,7 +665,7 @@ a,
             top: 20px;
             right: 1%;
             padding: 10px 20px;
-            background-color: #FF642C;
+            background-color: #ff642c;
             color: #fff;
             border: 1px solid white;
             border-radius: 50px;
@@ -683,8 +678,8 @@ a,
           }
 
           .zoom-out-button:hover {
-            background-color: #FF642C;
-            background-image: #FF642C;
+            background-color: #ff642c;
+            background-image: #ff642c;
             color: white; /* Button text color */
             border: 1px solid black;
             transition: background-color 0.3s ease-in-out,
@@ -789,8 +784,8 @@ a,
           }
 
           .zoom-controls button:hover {
-            background-color: #FF642C;
-            background-image: #FF642C;
+            background-color: #ff642c;
+            background-image: #ff642c;
             color: white;
           }
 
@@ -933,7 +928,7 @@ a,
               <button id="zoomOutBtn">−</button>
             </div>
             <div class="map-copyright">
-              &copy; 2025 Edgestone. All rights reserved.
+              &copy; 2025 EdgeStone. All rights reserved. Maps not to scale.
             </div>
           </div>
           <div id="pop_detail" class="pop_detail">
@@ -1232,7 +1227,7 @@ a,
                   .setHTML(
                     `
                 <div style="background-color: #fff;  border-style: none; text-decoration: none; ">
-                    <img src="${"https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 190px; width: 220px;">
+                    <img src="${"https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 110px; width: 110px;">
                     <h4>Partner PoP at ${feature.properties.name}</h4>
 										<p style="white-space: normal; word-wrap: break-word;">${feature.properties.address.replace(
                       /\n/g,
@@ -1745,7 +1740,9 @@ a,
                     className: "line-popup",
                   })
                     .setLngLat(coordinates)
-                    .setHTML(`<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">${name}</div>`)
+                    .setHTML(
+                      `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">${name}</div>`
+                    )
                     .addTo(map);
                 }
 
