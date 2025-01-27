@@ -1123,10 +1123,17 @@ a,
             });
 
             map.on("load", function () {
-              // Load partner sites first
-              map.loadImage("/Tower.svg", (error, image) => {
-                if (error) throw error;
-                map.addImage("tower-marker", image);
+              // Create tower icon as SVG data URL
+              const towerSvg = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L8 6H11V14.17L6.12 19.05C5.73 19.44 5.73 20.07 6.12 20.46C6.51 20.85 7.14 20.85 7.53 20.46L12 15.99L16.47 20.46C16.86 20.85 17.49 20.85 17.88 20.46C18.27 20.07 18.27 19.44 17.88 19.05L13 14.17V6H16L12 2Z" fill="#ff642c"/>
+                  <path d="M12 2L8 6H11V14.17L6.12 19.05C5.73 19.44 5.73 20.07 6.12 20.46C6.51 20.85 7.14 20.85 7.53 20.46L12 15.99L16.47 20.46C16.86 20.85 17.49 20.85 17.88 20.46C18.27 20.07 18.27 19.44 17.88 19.05L13 14.17V6H16L12 2Z" fill="white" fill-opacity="0.3"/>
+                </svg>
+              `)}`;
+
+              const towerImage = new Image();
+              towerImage.onload = () => {
+                map.addImage("tower-marker", towerImage);
 
                 // Add partner sites source and layer
                 map.addSource("partner-sites", {
@@ -1140,7 +1147,7 @@ a,
                   source: "partner-sites",
                   layout: {
                     "icon-image": "tower-marker",
-                    "icon-size": 0.5,
+                    "icon-size": 1.2,
                     "icon-allow-overlap": true,
                     "text-field": ["get", "name"],
                     "text-offset": [0, 1.5],
@@ -1171,12 +1178,12 @@ a,
                     .setLngLat(coordinates)
                     .setHTML(
                       `
-                        <div style="background-color: #fff; border-style: none; text-decoration: none;">
-                          <img src="https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png" style="display: block; margin-left: auto; margin-right: auto; height: 110px; width: 110px;">
-                          <h4>${name}</h4>
-                          <p style="white-space: normal; word-wrap: break-word;">${description}<br>${country}</p>
-                        </div>
-                      `
+                      <div style="background-color: #fff; border-style: none; text-decoration: none;">
+                        <img src="https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png" style="display: block; margin-left: auto; margin-right: auto; height: 110px; width: 110px;">
+                        <h4>${name}</h4>
+                        <p style="white-space: normal; word-wrap: break-word;">${description}<br>${country}</p>
+                      </div>
+                    `
                     )
                     .addTo(map);
                 });
@@ -1187,7 +1194,8 @@ a,
                     document.getElementsByClassName("mapboxgl-popup");
                   if (popups[0]) popups[0].remove();
                 });
-              });
+              };
+              towerImage.src = towerSvg;
 
               // Load existing layers
               for (let i = 0; i < mapFiles_LineStrings.length; i++) {
