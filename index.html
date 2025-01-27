@@ -1427,6 +1427,15 @@ a,
                       "visibility",
                       "visible"
                     );
+                    // Show the Show All Cables button when a single cable is selected
+                    document
+                      .getElementById("showAllCables")
+                      .classList.add("visible");
+                  } else {
+                    // Hide the Show All Cables button when no cable is selected
+                    document
+                      .getElementById("showAllCables")
+                      .classList.remove("visible");
                   }
                 } else {
                   // For points/sites, keep original behavior
@@ -1449,174 +1458,6 @@ a,
                 }
               });
             });
-
-            // Add hover events for lines
-            mapFiles_LineStrings.forEach(function (lineId) {
-              map.on("mouseenter", lineId, function (e) {
-                map.getCanvas().style.cursor = "pointer";
-                const name = e.features[0].properties.name;
-
-                const description = e.features[0].properties.description;
-                if (description) {
-                  const coordinates = e.lngLat;
-
-                  new mapboxgl.Popup({
-                    closeButton: false,
-                    closeOnClick: false,
-                    className: "line-popup",
-                  })
-                    .setLngLat(coordinates)
-                    .setHTML(
-                      `<div style="color: #fff; background: rgba(0,0,0,0.7); padding: 8px; border-radius: 4px;">
-                            ${description}
-                           </div>`
-                    )
-                    .addTo(map);
-                }
-              });
-
-              map.on("mouseleave", lineId, function () {
-                map.getCanvas().style.cursor = "";
-                const popups =
-                  document.getElementsByClassName("mapboxgl-popup");
-                if (popups[0]) popups[0].remove();
-              });
-            });
-
-            mapboxgl.accessToken =
-              "pk.eyJ1IjoibWF0dGlzMjAxNzIwIiwiYSI6ImNsajc5eGU2NTAzZGkzbXMzMHQ4YWN6d2sifQ.wIB2bSe1n7UyhyXOvybi0Q";
-            function isMobile() {
-              return window.innerWidth <= 767;
-            }
-
-            const loadAllGeoJSON = async () => {
-              const filenames = [
-                "offices",
-                "US_Sites",
-                "Europe_Sites",
-                "Asia_Sites",
-                "Australia_Sites",
-                "Africa_Sites",
-                "SouthAmerica_Sites",
-              ];
-              const allFeatures = [];
-
-              for (const filename of filenames) {
-                const response = await fetch(
-                  `https://raw.githubusercontent.com/Aerotalk/edgestone-map/refs/heads/prantik-dev/${filename}.geojson`
-                );
-                const data = await response.json();
-                allFeatures.push(...data.features);
-              }
-              return {
-                type: "FeatureCollection",
-                features: allFeatures,
-              };
-            };
-
-            const customData = loadAllGeoJSON();
-
-            function forwardGeocoder(query) {
-              if (currentPopup) {
-                currentPopup.remove();
-              }
-              const matchingFeatures = [];
-
-              customData.then((data) => {
-                for (const feature of data.features) {
-                  if (
-                    feature.properties.name
-                      .toLowerCase()
-                      .includes(query.toLowerCase())
-                  ) {
-                    const coordinates = feature.geometry.coordinates;
-
-                    feature[
-                      "place_name"
-                    ] = `<img src="${feature.properties.image}" style="height: 50px; width: 50px; margin-right: 8px;">${feature.properties.name}, ${feature.properties.address}`;
-                    feature["center"] = feature.geometry.coordinates;
-                    matchingFeatures.push(feature);
-                  }
-                }
-
-                // If no matching features are found
-                if (matchingFeatures.length === 0) {
-                  matchingFeatures.push({
-                    place_name: "No Results Found",
-                    center: [1.3241115219785664, 103.9205378460226],
-                  });
-                }
-              });
-
-              return matchingFeatures;
-            }
-
-            if (!isMobile()) {
-              // Add the Mapbox Geocoder control
-              const geocoder = new MapboxGeocoder({
-                accessToken: mapboxgl.accessToken,
-                filter: function (item) {
-                  // Check if the item is in your GeoJSON data
-                  return customData.features.some(function (feature) {
-                    return feature.properties.name === item.place_name;
-                  });
-                },
-                localGeocoder: forwardGeocoder,
-                zoom: 14,
-                placeholder: "Search",
-                marker: false,
-                mapboxgl: mapboxgl,
-                limit: 20,
-              });
-
-              geocoder.on("error", function (error) {
-                console.log("Geocoding error:", error.message);
-                // You can customize the error message here and display it to the user
-                // For example, update a DOM element with the error message
-                document.getElementById("error-message").innerText =
-                  "No results found";
-              });
-
-              // Add an event listener to handle the result when a user selects a location
-              geocoder.on("result", (event) => {
-                const coordinates = event.result.geometry.coordinates;
-
-                geocoder.setInput("");
-
-                currentPopup = new mapboxgl.Popup({
-                  className: "point-popup",
-                  offset: 15,
-                  focusAfterOpen: false,
-                })
-                  .setLngLat(coordinates)
-                  .setHTML(
-                    `
-        <div style="background-color: #fff; border-style: none; text-decoration: none;">
-            <img src="${
-              event.result.properties.image
-            }" style="display: block; margin-left: auto; margin-right: auto; height: 90px; width: 220px;">
-            <h4>${event.result.properties.name}</h4>
-						<p style="white-space: normal; word-wrap: break-word;">${event.result.properties.address.replace(
-              /\n/g,
-              "<br>"
-            )}</p>
-            <a href="https://edgestone.in/contact-us/" style="display: block; margin-top: 30px; border: 1px solid black; width:60%; margin-left: auto; margin-right: auto;">Contact Us</a>
-        </div>
-    `
-                  )
-                  .addTo(map);
-              });
-
-              //   document
-              //     .getElementById("geocoder")
-              //     .appendChild(geocoder.onAdd(map));
-
-              //   map.addControl(geocoder); // Add the geocoder control to the map
-            }
-
-            map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
-            map.dragRotate.disable(); // disable map rotation using right click + drag
-            map.touchZoomRotate.disableRotation(); // disable map rotation using touch rotation gesture
 
             // Add click events for lines and show all cables functionality
             let currentVisibleLine = null;
@@ -1643,15 +1484,28 @@ a,
             }
 
             function showOnlyLine(lineId) {
+              // Hide all lines first
               mapFiles_LineStrings.forEach(function (id) {
-                const visibility = id === lineId ? "visible" : "none";
-                map.setLayoutProperty(id, "visibility", visibility);
-                map.setLayoutProperty(id + "_symbol", "visibility", visibility);
+                map.setLayoutProperty(id, "visibility", "none");
+                map.setLayoutProperty(id + "_symbol", "visibility", "none");
 
-                // Update checkboxes
+                // Uncheck all checkboxes
                 const checkbox = document.getElementById("control" + id);
-                if (checkbox) checkbox.checked = id === lineId;
+                if (checkbox) checkbox.checked = false;
               });
+
+              // Show only the selected line
+              map.setLayoutProperty(lineId, "visibility", "visible");
+              map.setLayoutProperty(
+                lineId + "_symbol",
+                "visibility",
+                "visible"
+              );
+
+              // Check only the selected checkbox
+              const checkbox = document.getElementById("control" + lineId);
+              if (checkbox) checkbox.checked = true;
+
               currentVisibleLine = lineId;
 
               // Show the Show All Cables button
@@ -1662,11 +1516,6 @@ a,
             document
               .getElementById("showAllCables")
               .addEventListener("click", function () {
-                // Check all cable checkboxes
-                mapFiles_LineStrings.forEach(function (lineId) {
-                  const checkbox = document.getElementById("control" + lineId);
-                  if (checkbox) checkbox.checked = true;
-                });
                 showAllCableLines();
               });
 
