@@ -374,35 +374,35 @@ a,
         /* Filter toggle button styles */
         .filter-toggle {
           position: absolute;
-          bottom: 20px;
           left: 20px;
+          top: 20px;
           z-index: 9998;
-          background-color: rgba(0, 0, 0, 0.5);
+          background-color: #333;
           border: none;
           border-radius: 4px;
-          width: 40px;
-          height: 40px;
           cursor: pointer;
+          padding: 8px 12px;
           display: flex;
           align-items: center;
-          justify-content: center;
-          backdrop-filter: blur(10px);
-          transition: all 0.3s ease;
+          gap: 8px;
+          color: white;
+          transition: background-color 0.3s ease;
         }
 
         .filter-toggle:hover {
-          background-image: #ff642c;
+          background-color: #ff642c;
         }
 
         .filter-toggle svg {
-          width: 24px;
-          height: 24px;
+          width: 20px;
+          height: 20px;
           fill: #fff;
           transition: transform 0.3s ease;
         }
 
-        .filter-toggle:hover svg {
-          fill: white;
+        .filter-toggle .button-text {
+          font-size: 14px;
+          font-weight: 500;
         }
 
         .filter-toggle.active svg {
@@ -876,6 +876,7 @@ a,
                 d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
               />
             </svg>
+            <span class="button-text">Show Filters</span>
           </button>
           <div class="filters hidden" id="filters">
             <a href="https://edgestone.in/" target="_blank">
@@ -1044,501 +1045,6 @@ a,
       <!DOCTYPE html>
       <html>
         <body>
-          <script>
-            mapboxgl.accessToken =
-              "pk.eyJ1IjoibWF0dGlzMjAxNzIwIiwiYSI6ImNsajc5eGU2NTAzZGkzbXMzMHQ4YWN6d2sifQ.wIB2bSe1n7UyhyXOvybi0Q";
-            var lineStringColors = [
-              "#FF0000", // Red (US)
-              "#00FF00", // Green (Europe)
-              "#0000FF", // Blue (Asia)
-              "#FFA500", // Orange (SouthAmerica)
-              "#800080", // Purple (Africa)
-              "#FFFF00", // Yellow (Transpacific)
-              "#00FFFF", // Cyan (Transatlantic)
-              "#FF00FF", // Magenta (Subsea)
-            ];
-            var pointColors = ["#fff", "#fff", "#fff", "#fff", "#fff", "#fff"];
-            var officepointColors = ["#63d3b5"];
-            var mapFiles_LineStrings = [
-              "US",
-              "Europe",
-              "Asia",
-              "SouthAmerica",
-              "Africa",
-              "Transpacific",
-              "Transatlantic",
-              "Subsea",
-            ];
-            var mapFiles_Points = [
-              "US_Sites",
-              "Europe_Sites",
-              "Asia_Sites",
-              "Australia_Sites",
-              "Africa_Sites",
-              "SouthAmerica_Sites",
-            ];
-            var mapFiles_Offices = ["offices"];
-            const map = new mapboxgl.Map({
-              container: "map",
-              style:
-                "https://api.maptiler.com/maps/streets-v2-dark/style.json?key=8X6s3rw3QxDndgFG8ZxT",
-              center: [22.902743, 29.263352],
-              zoom: 1.5,
-              maxZoom: 15,
-              minZoom: 2,
-              cooperativeGestures: true,
-            });
-            let filename;
-            let zoom;
-            var zoomOutButton = document.getElementById("zoomOutButton");
-            let x;
-            map.on("zoom", function () {
-              var zoomOutButton = document.getElementById("zoomOutButton");
-              var zoomLevel = map.getZoom();
-              if (zoomLevel > 2) {
-                zoomOutButton.style.display = "block";
-              } else {
-                zoomOutButton.style.display = "none";
-              }
-            });
-
-            map.on("load", function () {
-              for (let i = 0; i < mapFiles_LineStrings.length; i++) {
-                filename = mapFiles_LineStrings[i];
-                addLineLayer(filename, lineStringColors[i]);
-              }
-              for (let i = 0; i < mapFiles_Offices.length; i++) {
-                filename = mapFiles_Offices[i];
-                addOfficeLayer(filename, officepointColors[i]);
-                addHoverAndClickEvents(filename);
-                addPointClick(filename);
-              }
-              for (let i = 0; i < mapFiles_Points.length; i++) {
-                filename = mapFiles_Points[i];
-                addPointLayer(filename, pointColors[i]);
-                addHoverAndClickEvents(filename);
-                addPointClick(filename);
-              }
-            });
-
-            function addLineLayer(filename, color) {
-              map.addSource(filename, {
-                type: "geojson",
-                data: `https://raw.githubusercontent.com/Aerotalk/edgestone-map/refs/heads/prantik-dev/${filename}.geojson`,
-              });
-              map.addLayer({
-                id: filename,
-                type: "line",
-                source: filename,
-                paint: {
-                  "line-color": color,
-                  "line-width": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    0,
-                    1.5,
-                    5,
-                    2,
-                  ],
-                },
-                layout: {
-                  visibility: "visible",
-                },
-                minzoom: 0,
-              });
-              map.addLayer({
-                id: `${filename}_symbol`,
-                type: "symbol",
-                source: filename,
-                layout: {
-                  "symbol-placement": "line-center",
-                  "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-                  "text-field": ["get", "description"],
-                  "text-size": 10,
-                  "text-offset": [0, 1],
-                  visibility: "visible",
-                },
-                paint: {
-                  "text-color": "#fff",
-                },
-                minzoom: 3,
-              });
-            }
-
-            function addPointLayer(filename, color) {
-              map.addSource(filename, {
-                type: "geojson",
-                data: `https://raw.githubusercontent.com/Aerotalk/edgestone-map/refs/heads/prantik-dev/${filename}.geojson`,
-                cluster: true,
-                clusterMaxZoom: 11,
-                clusterRadius: 50,
-              });
-              map.addLayer({
-                id: `${filename}_points`,
-                type: "circle",
-                source: filename,
-                filter: ["!", ["has", "point_count"]],
-                paint: {
-                  "circle-color": color,
-                  "circle-radius": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    0,
-                    5, // radius @zoom 0
-                    5,
-                    7,
-                    10,
-                    9,
-                  ],
-                  "circle-stroke-color": "#000",
-                  "circle-stroke-width": 1,
-                },
-                layout: {
-                  visibility: "visible",
-                },
-              });
-
-              map.addLayer({
-                id: `${filename}_clusters`,
-                type: "circle",
-                source: filename,
-                filter: ["has", "point_count"],
-                paint: {
-                  "circle-color": color,
-                  "circle-radius": ["step", ["get", "point_count"], 12, 15, 18],
-                  "circle-stroke-color": "#000",
-                  "circle-stroke-width": 1,
-                },
-                layout: {
-                  visibility: "visible",
-                },
-              });
-              map.addLayer({
-                id: `${filename}_cluster-count`,
-                type: "symbol",
-                source: filename,
-                filter: ["has", "point_count"],
-                layout: {
-                  "text-field": "{point_count}",
-                  "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
-                  "text-size": 12,
-                },
-                paint: {
-                  "text-color": "#000",
-                },
-              });
-            }
-            function addOfficeLayer(filename, color) {
-              map.addSource(filename, {
-                type: "geojson",
-                data: `https://raw.githubusercontent.com/Aerotalk/edgestone-map/refs/heads/prantik-dev/${filename}.geojson`,
-              });
-
-              map.addLayer({
-                id: `${filename}_points`,
-                type: "circle",
-                source: filename,
-                paint: {
-                  "circle-color": color,
-                  "circle-radius": [
-                    "interpolate",
-                    ["linear"],
-                    ["zoom"],
-                    0,
-                    5,
-                    5,
-                    7,
-                    10,
-                    9,
-                    12,
-                    11,
-                  ],
-                  "circle-stroke-color": "#000",
-                  "circle-stroke-width": 1,
-                },
-                layout: {
-                  visibility: "visible",
-                },
-              });
-            }
-
-            let popup;
-            let currentPopup;
-            let currentZoom;
-            function addHoverAndClickEvents(filename) {
-              map.on("mouseenter", `${filename}_points`, function (e) {
-                map.getCanvas().style.cursor = "pointer";
-                e.preventDefault();
-                if (currentPopup) {
-                  currentPopup.remove();
-                }
-                var feature = e.features[0];
-                var imageSource = feature.properties.image;
-                var name = feature?.properties?.name;
-                var address = feature?.properties?.address;
-                const coordinates = e.features[0].geometry.coordinates.slice();
-
-                currentPopup = new mapboxgl.Popup({
-                  className: "point-popup",
-                  offset: 15,
-                  focusAfterOpen: false,
-                })
-                  .setLngLat(coordinates)
-                  .setHTML(
-                    `
-                <div style="background-color: #fff;  border-style: none; text-decoration: none; ">
-                    <img src="${"https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 110px; width: 110px;">
-                    <h4>Partner PoP at ${feature.properties.name}</h4>
-										<p style="white-space: normal; word-wrap: break-word;">${feature.properties.address.replace(
-                      /\n/g,
-                      "<br>"
-                    )}</p>
-                </div>
-            `
-                  )
-                  .addTo(map);
-              });
-
-              // <a href="https://edgestone.in/contact-us/" style="display: block; margin-top: 30px; border: 1px solid black; width:60%; margin-left: auto; margin-right: auto; ">Contact Us</a>
-
-              map.on("click", `${filename}_clusters`, function (e) {
-                const features = map.queryRenderedFeatures(e.point, {
-                  layers: [`${filename}_clusters`],
-                });
-                const clusterId = features[0].properties.cluster_id;
-                map.getCanvas().style.cursor = "pointer";
-                e.preventDefault();
-                if (currentPopup) {
-                  currentPopup.remove();
-                }
-                map
-                  .getSource(filename)
-                  .getClusterExpansionZoom(
-                    clusterId,
-                    function (err, clusterZoom) {
-                      if (err) return;
-
-                      currentZoom = map.getZoom();
-                      zoom =
-                        currentZoom < 3 ? clusterZoom + 2 : clusterZoom + 1;
-
-                      map.flyTo({
-                        center: features[0].geometry.coordinates,
-                        zoom: zoom,
-                        duration: 4000,
-                        essential: true,
-                      });
-                    }
-                  );
-              });
-
-              map.on("mouseleave", `${filename}_points`, function (e) {
-                map.getCanvas().style.cursor = "";
-                if (currentPopup && !currentPopup.isOpen()) {
-                  currentPopup.remove();
-                  currentPopup = null;
-                }
-              });
-              map.on("mouseenter", `${filename}_clusters`, function (e) {
-                map.getCanvas().style.cursor = "pointer";
-                e.preventDefault();
-              });
-              map.on("mouseleave", `${filename}_clusters`, function (e) {
-                map.getCanvas().style.cursor = "";
-                e.preventDefault();
-              });
-            }
-
-            function addPointClick(filename) {
-              map.on("click", `${filename}_points`, function (e) {
-                map.getCanvas().style.cursor = "pointer";
-                e.preventDefault();
-
-                if (currentPopup) {
-                  currentPopup.remove();
-                }
-                var feature = e.features[0];
-                var imageSource = feature.properties.image;
-                var name = feature.properties.name;
-                var address = feature.properties.address;
-                const coordinates = e.features[0].geometry.coordinates;
-                currentPopup = new mapboxgl.Popup({
-                  className: "point-popup",
-                  offset: 15,
-                  focusAfterOpen: false,
-                })
-                  .setLngLat(coordinates)
-                  .setHTML(
-                    `
-<div style="background-color: #fff;  border-style: none; text-decoration: none; ">
-<img src="${"https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"}" style="display: block; margin-left: auto; margin-right: auto; height: 190px; width: 220px;">
-<h4>Partner PoP at ${feature.properties.name}</h4>
-<p style="white-space: normal; word-wrap: break-word;">${feature.properties.address.replace(
-                      /\n/g,
-                      "<br>"
-                    )}</p>
-</div>
-`
-                  )
-                  .addTo(map);
-
-                currentZoom = map.getZoom();
-                map.flyTo({
-                  center: coordinates,
-                  zoom: currentZoom + 2,
-                  duration: 5000,
-                  essential: true,
-                });
-
-                map.on("mouseleave", `${filename}_points`, function (e) {
-                  map.getCanvas().style.cursor = "";
-
-                  // Check if there is an open popup and close it immediately
-                  if (currentPopup && !currentPopup.isOpen()) {
-                    currentPopup.remove();
-                    currentPopup = null;
-                  }
-                });
-              });
-            }
-
-            // Add zoom control functionality
-            document
-              .getElementById("zoomInButton")
-              .addEventListener("click", function () {
-                map.easeTo({
-                  zoom: map.getZoom() + 1,
-                  duration: 1000,
-                  essential: true,
-                });
-              });
-
-            document
-              .getElementById("zoomOutBtn")
-              .addEventListener("click", function () {
-                map.easeTo({
-                  zoom: map.getZoom() - 1,
-                  duration: 1000,
-                  essential: true,
-                });
-              });
-
-            // Add these to the existing zoom controls section where you have the zoomOutButton handler
-            const zoomInBtn = document.getElementById("zoomInButton");
-            const zoomOutBtn = document.getElementById("zoomOutBtn");
-
-            // Ensure buttons respect zoom limits
-            map.on("zoom", () => {
-              const currentZoom = map.getZoom();
-              zoomInBtn.disabled = currentZoom >= map.getMaxZoom();
-              zoomOutBtn.disabled = currentZoom <= map.getMinZoom();
-            });
-
-            // Cable search functionality
-            const cableSearch = document.getElementById("cableSearch");
-            const searchResults = document.getElementById("searchResults");
-
-            // Function to get all cable data
-            function getAllCableData() {
-              const cables = [];
-              mapFiles_LineStrings.forEach((lineId) => {
-                const source = map.getSource(lineId);
-                if (source) {
-                  const features = source._data.features;
-                  features.forEach((feature) => {
-                    cables.push({
-                      id: lineId,
-                      name: feature.properties.Name,
-                      description: feature.properties.description || "",
-                    });
-                  });
-                }
-              });
-              return cables;
-            }
-
-            // Function to filter cables
-            function filterCables(searchTerm) {
-              const cables = getAllCableData();
-              return cables.filter((cable) => {
-                const searchString = searchTerm.toLowerCase();
-                return (
-                  cable.name.toLowerCase().includes(searchString) ||
-                  cable.description.toLowerCase().includes(searchString)
-                );
-              });
-            }
-
-            // Function to display search results
-            function displaySearchResults(results) {
-              if (results.length === 0) {
-                searchResults.innerHTML =
-                  '<div class="no-results">No cables found</div>';
-              } else {
-                searchResults.innerHTML = results
-                  .map(
-                    (cable) => `
-                  <div class="search-result-item" data-cable-id="${cable.id}">
-                    <strong>${cable.name}</strong>
-                    ${
-                      cable.description
-                        ? `<br><small>${cable.description}</small>`
-                        : ""
-                    }
-                  </div>
-                `
-                  )
-                  .join("");
-              }
-              searchResults.style.display = "block";
-            }
-
-            // Search input event handler
-            cableSearch.addEventListener("input", (e) => {
-              const searchTerm = e.target.value.trim();
-              if (searchTerm === "") {
-                searchResults.style.display = "none";
-                return;
-              }
-              const results = filterCables(searchTerm);
-              displaySearchResults(results);
-            });
-
-            // Click handler for search results
-            searchResults.addEventListener("click", (e) => {
-              const resultItem = e.target.closest(".search-result-item");
-              if (resultItem) {
-                const cableId = resultItem.dataset.cableId;
-                showOnlyLine(cableId);
-                searchResults.style.display = "none";
-                cableSearch.value = "";
-              }
-            });
-
-            // Hide search results when clicking outside
-            document.addEventListener("click", (e) => {
-              if (!e.target.closest(".cable-search")) {
-                searchResults.style.display = "none";
-              }
-            });
-
-            // Clear search when showing all cables
-            document
-              .getElementById("showAllCables")
-              .addEventListener("click", () => {
-                cableSearch.value = "";
-                searchResults.style.display = "none";
-              });
-          </script>
-        </body>
-      </html>
-    </div>
-    <div class="w-embed w-script">
-      <!DOCTYPE html>
-      <html>
-        <body>
           <div id="error-message"></div>
 
           <script>
@@ -1643,6 +1149,150 @@ a,
 
             mapboxgl.accessToken =
               "pk.eyJ1IjoibWF0dGlzMjAxNzIwIiwiYSI6ImNsajc5eGU2NTAzZGkzbXMzMHQ4YWN6d2sifQ.wIB2bSe1n7UyhyXOvybi0Q";
+            var lineStringColors = [
+              "#FF0000", // Red (US)
+              "#00FF00", // Green (Europe)
+              "#0000FF", // Blue (Asia)
+              "#FFA500", // Orange (SouthAmerica)
+              "#800080", // Purple (Africa)
+              "#FFFF00", // Yellow (Transpacific)
+              "#00FFFF", // Cyan (Transatlantic)
+              "#FF00FF", // Magenta (Subsea)
+            ];
+            var pointColors = ["#fff", "#fff", "#fff", "#fff", "#fff", "#fff"];
+            var officepointColors = ["#63d3b5"];
+            var mapFiles_LineStrings = [
+              "US",
+              "Europe",
+              "Asia",
+              "SouthAmerica",
+              "Africa",
+              "Transpacific",
+              "Transatlantic",
+              "Subsea",
+            ];
+            var mapFiles_Points = [
+              "US_Sites",
+              "Europe_Sites",
+              "Asia_Sites",
+              "Australia_Sites",
+              "Africa_Sites",
+              "SouthAmerica_Sites",
+            ];
+            var mapFiles_Offices = ["offices"];
+            const map = new mapboxgl.Map({
+              container: "map",
+              style:
+                "https://api.maptiler.com/maps/streets-v2-dark/style.json?key=8X6s3rw3QxDndgFG8ZxT",
+              center: [22.902743, 29.263352],
+              zoom: 1.5,
+              maxZoom: 15,
+              minZoom: 2,
+              cooperativeGestures: true,
+            });
+
+            // Cable search functionality
+            const cableSearch = document.getElementById("cableSearch");
+            const searchResults = document.getElementById("searchResults");
+
+            // Function to get all cable data
+            function getAllCableData() {
+              const cables = [];
+              mapFiles_LineStrings.forEach((lineId) => {
+                const source = map.getSource(lineId);
+                if (source && source._data && source._data.features) {
+                  source._data.features.forEach((feature) => {
+                    if (feature.properties) {
+                      cables.push({
+                        id: lineId,
+                        name: feature.properties.Name || "",
+                        description: feature.properties.description || "",
+                      });
+                    }
+                  });
+                }
+              });
+              return cables;
+            }
+
+            // Function to filter cables
+            function filterCables(searchTerm) {
+              const cables = getAllCableData();
+              return cables.filter((cable) => {
+                const searchString = searchTerm.toLowerCase();
+                return (
+                  (cable.name &&
+                    cable.name.toLowerCase().includes(searchString)) ||
+                  (cable.description &&
+                    cable.description.toLowerCase().includes(searchString))
+                );
+              });
+            }
+
+            // Function to display search results
+            function displaySearchResults(results) {
+              if (results.length === 0) {
+                searchResults.innerHTML =
+                  '<div class="no-results">No cables found</div>';
+              } else {
+                searchResults.innerHTML = results
+                  .map(
+                    (cable) => `
+                    <div class="search-result-item" data-cable-id="${cable.id}">
+                      <strong>${cable.name || "Unnamed Cable"}</strong>
+                      ${
+                        cable.description
+                          ? `<br><small>${cable.description}</small>`
+                          : ""
+                      }
+                    </div>
+                  `
+                  )
+                  .join("");
+              }
+              searchResults.style.display = "block";
+            }
+
+            // Initialize search functionality after map loads
+            map.on("load", function () {
+              // Search input event handler
+              cableSearch.addEventListener("input", function (e) {
+                const searchTerm = e.target.value.trim();
+                if (searchTerm === "") {
+                  searchResults.style.display = "none";
+                  return;
+                }
+                const results = filterCables(searchTerm);
+                displaySearchResults(results);
+              });
+
+              // Click handler for search results
+              searchResults.addEventListener("click", function (e) {
+                const resultItem = e.target.closest(".search-result-item");
+                if (resultItem) {
+                  const cableId = resultItem.dataset.cableId;
+                  showOnlyLine(cableId);
+                  searchResults.style.display = "none";
+                  cableSearch.value = "";
+                }
+              });
+
+              // Hide search results when clicking outside
+              document.addEventListener("click", function (e) {
+                if (!e.target.closest(".cable-search")) {
+                  searchResults.style.display = "none";
+                }
+              });
+
+              // Clear search when showing all cables
+              document
+                .getElementById("showAllCables")
+                .addEventListener("click", function () {
+                  cableSearch.value = "";
+                  searchResults.style.display = "none";
+                });
+            });
+
             function isMobile() {
               return window.innerWidth <= 767;
             }
@@ -1933,15 +1583,14 @@ a,
 
             // Add filter toggle functionality
             const filterToggle = document.getElementById("filterToggle");
-            const filtersPanel = document.getElementById("filters");
+            const buttonText = filterToggle.querySelector(".button-text");
 
             filterToggle.addEventListener("click", function () {
-              this.classList.toggle("active");
-              if (window.innerWidth <= 480) {
-                filtersPanel.classList.toggle("visible");
-              } else {
-                filtersPanel.classList.toggle("hidden");
-              }
+              const filters = document.getElementById("filters");
+              filters.classList.toggle("hidden");
+              buttonText.textContent = filters.classList.contains("hidden")
+                ? "Show Filters"
+                : "Hide Filters";
             });
 
             // Update filters visibility on window resize
