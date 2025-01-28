@@ -40,7 +40,7 @@
       "type": "Feature",
       "properties": {
         "Name": "2Africa",
-        "description": "Major submarine cable system connecting Africa, Europe, and Asia",
+        "description": "2Africa",
         "tessellate": 1,
         "extrude": 0,
         "visibility": -1

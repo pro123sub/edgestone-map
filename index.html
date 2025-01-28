@@ -888,8 +888,11 @@ a,
                 d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"
               />
             </svg>
+            <span id="filterText" style="color: #fff">Show Filters</span>
           </button>
-          <div class="filters hidden" id="filters">
+
+          <!-- overflow scroll -->
+          <div class="filters hidden" id="filters" style="overflow-y: scroll">
             <a href="https://edgestone.in/" target="_blank">
               <img
                 src="https://edgestone.in/wp-content/uploads/2024/12/Untitled_design-removebg-preview-1.png"
@@ -1882,6 +1885,44 @@ a,
                 } else {
                   filtersPanel.classList.remove("hidden");
                 }
+              }
+            });
+
+            filterToggle.addEventListener("click", function () {
+              this.classList.toggle("active");
+              if (window.innerWidth <= 480) {
+                filtersPanel.classList.toggle("visible");
+                filterText.textContent = filtersPanel.classList.contains(
+                  "visible"
+                )
+                  ? "Hide Filters"
+                  : "Show Filters";
+              } else {
+                filtersPanel.classList.toggle("hidden");
+                filterText.textContent = filtersPanel.classList.contains(
+                  "hidden"
+                )
+                  ? "Show Filters"
+                  : "Hide Filters";
+              }
+            });
+
+            filterToggle.addEventListener("click", function () {
+              this.classList.toggle("active");
+              if (window.innerWidth <= 480) {
+                filtersPanel.classList.toggle("visible");
+                filterText.textContent = filtersPanel.classList.contains(
+                  "visible"
+                )
+                  ? "Hide Filters"
+                  : "Show Filters";
+              } else {
+                filtersPanel.classList.toggle("hidden");
+                filterText.textContent = filtersPanel.classList.contains(
+                  "hidden"
+                )
+                  ? "Show Filters"
+                  : "Hide Filters";
               }
             });
           </script>

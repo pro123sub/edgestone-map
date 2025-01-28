@@ -33,7 +33,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Coresite LA1 - Equinix TY2 - FASTER",
-        "description": "FASTER",
+        "description": "Coresite LA1 - Equinix TY2 - FASTER",
         "tessellate": 1,
         "extrude": 0,
         "visibility": -1
@@ -82,7 +82,7 @@
       "type": "Feature",
       "properties": {
         "Name": "JUNO",
-        "description": "RFS: 2025 March",
+        "description": "RFS: 2025 March (JUNO)",
         "tessellate": 1,
         "extrude": 0,
         "visibility": -1
@@ -131,7 +131,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Australia-Japan Cable (AJC)",
-        "description": "RFS: 2001 December",
+        "description": "RFS: 2001 December (AJC)",
         "tessellate": 1,
         "extrude": 0,
         "visibility": -1
@@ -159,7 +159,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Asia-America Gateway (AAG) Cable System",
-        "description": "Connecting Southeast Asia to the US West Coast",
+        "description": "AAG",
         "tessellate": 1,
         "extrude": 0,
         "visibility": -1
