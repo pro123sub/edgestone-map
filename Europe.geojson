@@ -6,7 +6,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Equinix PA2 - Digital Realty MRS1",
-        "description": ""
+        "description": "Equinix PA2 - Digital Realty MRS1"
       },
       "geometry": {
         "type": "LineString",
@@ -26,7 +26,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Equinix PA2 - Telehouse Voltaire #1",
-        "description": ""
+        "description": "Equinix PA2 - Telehouse Voltaire #1"
       },
       "geometry": {
         "type": "LineString",
@@ -44,7 +44,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Equinix PA2 - Telehouse Voltaire #2",
-        "description": ""
+        "description": "Equinix PA2 - Telehouse Voltaire #2"
       },
       "geometry": {
         "type": "LineString",
@@ -73,7 +73,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Telehouse Voltaire - Digital Realty FRA8",
-        "description": ""
+        "description": "Telehouse Voltaire - Digital Realty FRA8"
       },
       "geometry": {
         "type": "LineString",
@@ -145,7 +145,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Digital Realty FRA8 - Equinix FR5 #1",
-        "description": ""
+        "description": "Digital Realty FRA8 - Equinix FR5 #1"
       },
       "geometry": {
         "type": "LineString",
@@ -172,7 +172,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Digital Realty FRA8 - Equinix FR5 #2",
-        "description": ""
+        "description": "Digital Realty FRA8 - Equinix FR5 #2"
       },
       "geometry": {
         "type": "LineString",
@@ -208,7 +208,7 @@
     },
     {
       "type": "Feature",
-      "properties": { "Name": "Equinix FR5 - Equinix AM7", "description": "" },
+      "properties": { "Name": "Equinix FR5 - Equinix AM7", "description": "Equinix FR5 - Equinix AM7" },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -270,7 +270,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Equinix AM7 - Digital Realty AMS9 #1",
-        "description": ""
+        "description": "Equinix AM7 - Digital Realty AMS9 #1"
       },
       "geometry": {
         "type": "LineString",
@@ -303,7 +303,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Equinix AM7 - Digital Realty AMS9 #2",
-        "description": ""
+        "description": "Equinix AM7 - Digital Realty AMS9 #2"
       },
       "geometry": {
         "type": "LineString",
@@ -342,7 +342,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Digital Realty AMS9 - Telehouse North",
-        "description": "Circe North"
+        "description": "Circe North (Digital Realty AMS9 - Telehouse North)"
       },
       "geometry": {
         "type": "LineString",
@@ -505,7 +505,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Equinix FR5 - Digital Realty MRS1",
-        "description": ""
+        "description": "Equinix FR5 - Digital Realty MRS1"
       },
       "geometry": {
         "type": "LineString",
@@ -676,7 +676,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Equinix PA2 - Equinix LD8",
-        "description": "Circe South"
+        "description": "Circe South (Equinix PA2 - Equinix LD8)"
       },
       "geometry": {
         "type": "LineString",
@@ -823,7 +823,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Telehouse North - Equinix LD8 #1",
-        "description": ""
+        "description": "Equinix LD8"
       },
       "geometry": {
         "type": "LineString",
@@ -922,7 +922,7 @@
       "type": "Feature",
       "properties": {
         "Name": "IMEWE",
-        "description": "RFS: 2010 December",
+        "description": "RFS: 2010 December (IMEWE)",
         "tessellate": 1,
         "extrude": 0,
         "visibility": -1
