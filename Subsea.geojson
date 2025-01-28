@@ -42,7 +42,8 @@
         "type": "Feature",
         "properties": {
           "Name": "Digital Realty MRS1 - Equinix SG3",
-          "description": "SeaMeWe-4 (SMW4)"
+          "description": "SeaMeWe-4 (SMW4)",
+          "color": "#187bb6"
         },
         "geometry": {
           "type": "LineString",
