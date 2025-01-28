@@ -1219,7 +1219,7 @@ a,
               }
             });
 
-            function addLineLayer(filename, color) {
+            function addLineLayer(filename, defaultColor) {
               map.addSource(filename, {
                 type: "geojson",
                 data: `https://raw.githubusercontent.com/Aerotalk/edgestone-map/refs/heads/prantik-dev/${filename}.geojson`,
@@ -1229,7 +1229,12 @@ a,
                 type: "line",
                 source: filename,
                 paint: {
-                  "line-color": color,
+                  "line-color": [
+                    "case",
+                    ["has", "color"], // Check if feature has a color property
+                    ["get", "color"], // If yes, use that color
+                    defaultColor, // If no, use the default color
+                  ],
                   "line-width": [
                     "interpolate",
                     ["linear"],
