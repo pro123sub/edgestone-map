@@ -265,7 +265,7 @@
       "type": "Feature",
       "properties": {
         "Name": "AT Tokyo CC1 - KINX Dogok",
-        "description": "Protected"
+        "description": "AT Tokyo CC1 - KINX Dogok"
       },
       "geometry": {
         "type": "LineString",
@@ -553,7 +553,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Mega-i - Equinix SY1",
-        "description": "Protected"
+        "description": "Mega-i - Equinix SY1"
       },
       "geometry": {
         "type": "LineString",
@@ -626,7 +626,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Mega-i - Viettel IDC Hoan Hoa Tham",
-        "description": "Protected"
+        "description": "Mega-i - Viettel IDC Hoan Hoa Tham"
       },
       "geometry": {
         "type": "LineString",
@@ -644,7 +644,7 @@
       "type": "Feature",
       "properties": {
         "Name": "Viettel IDC Hoan Hoa Tham - Global Switch Tai Seng",
-        "description": "Protected"
+        "description": "Viettel IDC Hoan Hoa Tham - Global Switch Tai Seng"
       },
       "geometry": {
         "type": "LineString",
