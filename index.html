@@ -1546,32 +1546,23 @@ a,
               zoomOutBtn.disabled = currentZoom <= map.getMinZoom();
             });
 
-            // Separate tower toggle handler
-            document.getElementById("towerToggle").addEventListener("change", function (e) {
-              const isChecked = e.target.checked;
-              // Only handle partner sites visibility
-              map.setLayoutProperty("partner-sites-layer", "visibility", isChecked ? "visible" : "none");
-            });
+            // Add this after map initialization
+            document
+              .getElementById("towerToggle")
+              .addEventListener("change", function (e) {
+                const isChecked = e.target.checked;
 
-            // Handle all other checkboxes separately
-            var checkboxes = document.querySelectorAll(".content input[type='checkbox']");  // Only select checkboxes inside content divs
-            checkboxes.forEach(function (checkbox) {
-              checkbox.addEventListener("change", function () {
-                var id = this.id.replace("control", "");
-                var visibility = this.checked ? "visible" : "none";
+                // Handle tower visibility - only for partner-sites-layer
+                map.setLayoutProperty(
+                  "partner-sites-layer",
+                  "visibility",
+                  isChecked ? "visible" : "none"
+                );
 
-                if (id.includes("Sites")) {
-                  // Handle PoP sites
-                  map.setLayoutProperty(`${id}_points`, "visibility", visibility);
-                  map.setLayoutProperty(`${id}_clusters`, "visibility", visibility);
-                  map.setLayoutProperty(`${id}_cluster-count`, "visibility", visibility);
-                } else {
-                  // Handle cable lines
-                  map.setLayoutProperty(id, "visibility", visibility);
-                  map.setLayoutProperty(`${id}_symbol`, "visibility", visibility);
-                }
+                // Update partner sites checkbox in the filters
+                document.getElementById("controlpartner-sites-layer").checked =
+                  isChecked;
               });
-            });
           </script>
         </body>
       </html>
@@ -1850,6 +1841,25 @@ a,
                 } else {
                   filtersPanel.classList.remove("hidden");
                 }
+              }
+            });
+
+            filterToggle.addEventListener("click", function () {
+              this.classList.toggle("active");
+              if (window.innerWidth <= 480) {
+                filtersPanel.classList.toggle("visible");
+                filterText.textContent = filtersPanel.classList.contains(
+                  "visible"
+                )
+                  ? "Hide Filters"
+                  : "Show Filters";
+              } else {
+                filtersPanel.classList.toggle("hidden");
+                filterText.textContent = filtersPanel.classList.contains(
+                  "hidden"
+                )
+                  ? "Show Filters"
+                  : "Hide Filters";
               }
             });
 
