@@ -943,14 +943,6 @@ a,
                   />
                   South America Sites
                 </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    id="controlpartner-sites-layer"
-                    checked
-                  />
-                  Partner Sites
-                </label>
               </div>
               <div class="collapsible">
                 Fiber Cables
@@ -1546,10 +1538,15 @@ a,
                 const isChecked = e.target.checked;
 
                 // Handle tower visibility - only for partner-sites-layer
-                map.setLayoutProperty("partner-sites-layer", "visibility", isChecked ? "visible" : "none");
+                map.setLayoutProperty(
+                  "partner-sites-layer",
+                  "visibility",
+                  isChecked ? "visible" : "none"
+                );
 
                 // Update partner sites checkbox in the filters
-                document.getElementById("controlpartner-sites-layer").checked = isChecked;
+                document.getElementById("controlpartner-sites-layer").checked =
+                  isChecked;
               });
           </script>
         </body>
