@@ -1586,66 +1586,32 @@ a,
               });
             }
 
-            var checkboxes = document.querySelectorAll(
-              "input[type='checkbox']"
-            );
-            checkboxes.forEach(function (checkbox) {
-              checkbox.addEventListener("change", function () {
-                var id = this.id.replace("control", "");
-                var visibility = this.checked ? "visible" : "none";
+// Separate tower toggle handler
+document.getElementById("towerToggle").addEventListener("change", function (e) {
+  const isChecked = e.target.checked;
+  // Only handle partner sites visibility
+  map.setLayoutProperty("partner-sites-layer", "visibility", isChecked ? "visible" : "none");
+});
 
-                // If this is a line layer (not a point/site layer)
-                if (!id.includes("Sites") && !id.includes("offices")) {
-                  // First hide all line layers
-                  mapFiles_LineStrings.forEach(function (lineId) {
-                    map.setLayoutProperty(lineId, "visibility", "none");
-                    map.setLayoutProperty(
-                      lineId + "_symbol",
-                      "visibility",
-                      "none"
-                    );
-                  });
+// Handle all other checkboxes separately
+var checkboxes = document.querySelectorAll(".content input[type='checkbox']");  // Only select checkboxes inside content divs
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    var id = this.id.replace("control", "");
+    var visibility = this.checked ? "visible" : "none";
 
-                  // Then show only the selected line if checked
-                  if (this.checked) {
-                    map.setLayoutProperty(id, "visibility", "visible");
-                    map.setLayoutProperty(
-                      id + "_symbol",
-                      "visibility",
-                      "visible"
-                    );
-                    // Show the Show All Cables button when a single cable is selected
-                    document
-                      .getElementById("showAllCables")
-                      .classList.add("visible");
-                  } else {
-                    // Hide the Show All Cables button when no cable is selected
-                    document
-                      .getElementById("showAllCables")
-                      .classList.remove("visible");
-                  }
-                } else {
-                  // For points/sites, keep original behavior
-                  map.setLayoutProperty(id, "visibility", visibility);
-                  map.setLayoutProperty(
-                    id + "_points",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_clusters",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_cluster-count",
-                    "visibility",
-                    visibility
-                  );
-                }
-              });
-            });
-
+    if (id.includes("Sites")) {
+      // Handle PoP sites
+      map.setLayoutProperty(`${id}_points`, "visibility", visibility);
+      map.setLayoutProperty(`${id}_clusters`, "visibility", visibility);
+      map.setLayoutProperty(`${id}_cluster-count`, "visibility", visibility);
+    } else {
+      // Handle cable lines
+      map.setLayoutProperty(id, "visibility", visibility);
+      map.setLayoutProperty(`${id}_symbol`, "visibility", visibility);
+    }
+  });
+});
             // Add click events for lines and show all cables functionality
             let currentVisibleLine = null;
 
@@ -1718,50 +1684,32 @@ a,
               });
             });
 
-            // Modify checkbox event listeners for lines
-            var checkboxes = document.querySelectorAll(
-              "input[type='checkbox']"
-            );
-            checkboxes.forEach(function (checkbox) {
-              checkbox.addEventListener("change", function () {
-                var id = this.id.replace("control", "");
-                var visibility = this.checked ? "visible" : "none";
+// Separate tower toggle handler
+document.getElementById("towerToggle").addEventListener("change", function (e) {
+  const isChecked = e.target.checked;
+  // Only handle partner sites visibility
+  map.setLayoutProperty("partner-sites-layer", "visibility", isChecked ? "visible" : "none");
+});
 
-                // If this is a line layer (not a point/site layer)
-                if (!id.includes("Sites") && !id.includes("offices")) {
-                  if (this.checked) {
-                    showOnlyLine(id);
-                  } else {
-                    map.setLayoutProperty(id, "visibility", "none");
-                    map.setLayoutProperty(id + "_symbol", "visibility", "none");
-                    currentVisibleLine = null;
-                    // Hide the Show All Cables button when unchecking
-                    document
-                      .getElementById("showAllCables")
-                      .classList.remove("visible");
-                  }
-                } else {
-                  // For points/sites, keep original behavior
-                  map.setLayoutProperty(id, "visibility", visibility);
-                  map.setLayoutProperty(
-                    id + "_points",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_clusters",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_cluster-count",
-                    "visibility",
-                    visibility
-                  );
-                }
-              });
-            });
+// Handle all other checkboxes separately
+var checkboxes = document.querySelectorAll(".content input[type='checkbox']");  // Only select checkboxes inside content divs
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    var id = this.id.replace("control", "");
+    var visibility = this.checked ? "visible" : "none";
 
+    if (id.includes("Sites")) {
+      // Handle PoP sites
+      map.setLayoutProperty(`${id}_points`, "visibility", visibility);
+      map.setLayoutProperty(`${id}_clusters`, "visibility", visibility);
+      map.setLayoutProperty(`${id}_cluster-count`, "visibility", visibility);
+    } else {
+      // Handle cable lines
+      map.setLayoutProperty(id, "visibility", visibility);
+      map.setLayoutProperty(`${id}_symbol`, "visibility", visibility);
+    }
+  });
+});
             // Add hover events for lines
             mapFiles_LineStrings.forEach(function (lineId) {
               map.on("mouseenter", lineId, function (e) {
