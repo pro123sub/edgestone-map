@@ -943,14 +943,6 @@ a,
                   />
                   South America Sites
                 </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    id="controlpartner-sites-layer"
-                    checked
-                  />
-                  Partner Sites
-                </label>
               </div>
               <div class="collapsible">
                 Fiber Cables
@@ -1126,6 +1118,21 @@ a,
             });
 
             map.on("load", function () {
+              // Hide graticule lines
+              map.setLayoutProperty("water-line-label", "visibility", "none");
+              map.setLayoutProperty("graticules", "visibility", "none");
+              map.setLayoutProperty("grid-lines", "visibility", "none");
+
+              const layers = map.getStyle().layers;
+              layers.forEach((layer) => {
+                if (
+                  layer.id.includes("grid") ||
+                  layer.id.includes("graticule") ||
+                  layer.id.includes("line-label")
+                ) {
+                  map.setLayoutProperty(layer.id, "visibility", "none");
+                }
+              });
               // Create tower icon as SVG data URL
               const towerSvg = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1219,7 +1226,7 @@ a,
               }
             });
 
-            function addLineLayer(filename, color) {
+            function addLineLayer(filename, defaultColor) {
               map.addSource(filename, {
                 type: "geojson",
                 data: `https://raw.githubusercontent.com/Aerotalk/edgestone-map/refs/heads/prantik-dev/${filename}.geojson`,
@@ -1229,7 +1236,12 @@ a,
                 type: "line",
                 source: filename,
                 paint: {
-                  "line-color": color,
+                  "line-color": [
+                    "case",
+                    ["has", "color"], // Check if feature has a color property
+                    ["get", "color"], // If yes, use that color
+                    defaultColor, // If no, use the default color
+                  ],
                   "line-width": [
                     "interpolate",
                     ["linear"],
@@ -1540,72 +1552,12 @@ a,
               .addEventListener("change", function (e) {
                 const isChecked = e.target.checked;
 
-                // Handle tower visibility
+                // Handle tower visibility - only for partner-sites-layer
                 map.setLayoutProperty(
                   "partner-sites-layer",
                   "visibility",
                   isChecked ? "visible" : "none"
                 );
-
-                // Update tower checkbox in the filters
-                document.getElementById("controlpartner-sites-layer").checked =
-                  isChecked;
-
-                if (isChecked) {
-                  // Hide all other layers when towers are shown
-                  mapFiles_LineStrings.forEach(function (lineId) {
-                    map.setLayoutProperty(lineId, "visibility", "none");
-                    map.setLayoutProperty(
-                      lineId + "_symbol",
-                      "visibility",
-                      "none"
-                    );
-                    document.getElementById("control" + lineId).checked = false;
-                  });
-
-                  mapFiles_Points.forEach(function (pointId) {
-                    map.setLayoutProperty(
-                      pointId + "_points",
-                      "visibility",
-                      "none"
-                    );
-                    map.setLayoutProperty(
-                      pointId + "_clusters",
-                      "visibility",
-                      "none"
-                    );
-                    map.setLayoutProperty(
-                      pointId + "_cluster-count",
-                      "visibility",
-                      "none"
-                    );
-                    document.getElementById(
-                      "control" + pointId
-                    ).checked = false;
-                  });
-
-                  // Hide offices
-                  mapFiles_Offices.forEach(function (officeId) {
-                    map.setLayoutProperty(
-                      officeId + "_points",
-                      "visibility",
-                      "none"
-                    );
-                    if (document.getElementById("control" + officeId)) {
-                      document.getElementById(
-                        "control" + officeId
-                      ).checked = false;
-                    }
-                  });
-                }
-              });
-
-            // Update the tower toggle when the checkbox in filters is clicked
-            document
-              .getElementById("controlpartner-sites-layer")
-              .addEventListener("change", function (e) {
-                document.getElementById("towerToggle").checked =
-                  e.target.checked;
               });
           </script>
         </body>
@@ -1633,66 +1585,56 @@ a,
               });
             }
 
+            // Separate tower toggle handler
+            document
+              .getElementById("towerToggle")
+              .addEventListener("change", function (e) {
+                const isChecked = e.target.checked;
+                // Only handle partner sites visibility
+                map.setLayoutProperty(
+                  "partner-sites-layer",
+                  "visibility",
+                  isChecked ? "visible" : "none"
+                );
+              });
+
+            // Handle all other checkboxes separately
             var checkboxes = document.querySelectorAll(
-              "input[type='checkbox']"
-            );
+              ".content input[type='checkbox']"
+            ); // Only select checkboxes inside content divs
             checkboxes.forEach(function (checkbox) {
               checkbox.addEventListener("change", function () {
                 var id = this.id.replace("control", "");
                 var visibility = this.checked ? "visible" : "none";
 
-                // If this is a line layer (not a point/site layer)
-                if (!id.includes("Sites") && !id.includes("offices")) {
-                  // First hide all line layers
-                  mapFiles_LineStrings.forEach(function (lineId) {
-                    map.setLayoutProperty(lineId, "visibility", "none");
-                    map.setLayoutProperty(
-                      lineId + "_symbol",
-                      "visibility",
-                      "none"
-                    );
-                  });
-
-                  // Then show only the selected line if checked
-                  if (this.checked) {
-                    map.setLayoutProperty(id, "visibility", "visible");
-                    map.setLayoutProperty(
-                      id + "_symbol",
-                      "visibility",
-                      "visible"
-                    );
-                    // Show the Show All Cables button when a single cable is selected
-                    document
-                      .getElementById("showAllCables")
-                      .classList.add("visible");
-                  } else {
-                    // Hide the Show All Cables button when no cable is selected
-                    document
-                      .getElementById("showAllCables")
-                      .classList.remove("visible");
-                  }
+                if (id.includes("Sites")) {
+                  // Handle PoP sites
+                  map.setLayoutProperty(
+                    `${id}_points`,
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    `${id}_clusters`,
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    `${id}_cluster-count`,
+                    "visibility",
+                    visibility
+                  );
                 } else {
-                  // For points/sites, keep original behavior
+                  // Handle cable lines
                   map.setLayoutProperty(id, "visibility", visibility);
                   map.setLayoutProperty(
-                    id + "_points",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_clusters",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_cluster-count",
+                    `${id}_symbol`,
                     "visibility",
                     visibility
                   );
                 }
               });
             });
-
             // Add click events for lines and show all cables functionality
             let currentVisibleLine = null;
 
@@ -1765,50 +1707,56 @@ a,
               });
             });
 
-            // Modify checkbox event listeners for lines
+            // Separate tower toggle handler
+            document
+              .getElementById("towerToggle")
+              .addEventListener("change", function (e) {
+                const isChecked = e.target.checked;
+                // Only handle partner sites visibility
+                map.setLayoutProperty(
+                  "partner-sites-layer",
+                  "visibility",
+                  isChecked ? "visible" : "none"
+                );
+              });
+
+            // Handle all other checkboxes separately
             var checkboxes = document.querySelectorAll(
-              "input[type='checkbox']"
-            );
+              ".content input[type='checkbox']"
+            ); // Only select checkboxes inside content divs
             checkboxes.forEach(function (checkbox) {
               checkbox.addEventListener("change", function () {
                 var id = this.id.replace("control", "");
                 var visibility = this.checked ? "visible" : "none";
 
-                // If this is a line layer (not a point/site layer)
-                if (!id.includes("Sites") && !id.includes("offices")) {
-                  if (this.checked) {
-                    showOnlyLine(id);
-                  } else {
-                    map.setLayoutProperty(id, "visibility", "none");
-                    map.setLayoutProperty(id + "_symbol", "visibility", "none");
-                    currentVisibleLine = null;
-                    // Hide the Show All Cables button when unchecking
-                    document
-                      .getElementById("showAllCables")
-                      .classList.remove("visible");
-                  }
+                if (id.includes("Sites")) {
+                  // Handle PoP sites
+                  map.setLayoutProperty(
+                    `${id}_points`,
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    `${id}_clusters`,
+                    "visibility",
+                    visibility
+                  );
+                  map.setLayoutProperty(
+                    `${id}_cluster-count`,
+                    "visibility",
+                    visibility
+                  );
                 } else {
-                  // For points/sites, keep original behavior
+                  // Handle cable lines
                   map.setLayoutProperty(id, "visibility", visibility);
                   map.setLayoutProperty(
-                    id + "_points",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_clusters",
-                    "visibility",
-                    visibility
-                  );
-                  map.setLayoutProperty(
-                    id + "_cluster-count",
+                    `${id}_symbol`,
                     "visibility",
                     visibility
                   );
                 }
               });
             });
-
             // Add hover events for lines
             mapFiles_LineStrings.forEach(function (lineId) {
               map.on("mouseenter", lineId, function (e) {
