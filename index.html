@@ -1556,61 +1556,77 @@ a,
                 document.getElementById("controlpartner-sites-layer").checked =
                   isChecked;
 
-                if (isChecked) {
-                  // Hide all other layers when towers are shown
-                  mapFiles_LineStrings.forEach(function (lineId) {
-                    map.setLayoutProperty(lineId, "visibility", "none");
-                    map.setLayoutProperty(
-                      lineId + "_symbol",
-                      "visibility",
-                      "none"
-                    );
-                    document.getElementById("control" + lineId).checked = false;
-                  });
+                // Separate handlers for towers toggle and individual checkboxes
+                const towerToggle = document.getElementById("towerToggle"); // Show All Towers switch
+                const checkboxes = document.querySelectorAll(
+                  "input[type='checkbox']"
+                );
 
-                  mapFiles_Points.forEach(function (pointId) {
-                    map.setLayoutProperty(
-                      pointId + "_points",
-                      "visibility",
-                      "none"
-                    );
-                    map.setLayoutProperty(
-                      pointId + "_clusters",
-                      "visibility",
-                      "none"
-                    );
-                    map.setLayoutProperty(
-                      pointId + "_cluster-count",
-                      "visibility",
-                      "none"
-                    );
-                    document.getElementById(
-                      "control" + pointId
-                    ).checked = false;
-                  });
+                // Handle tower toggle switch
+                towerToggle.addEventListener("change", function () {
+                  const showTowers = this.checked;
 
-                  // Hide offices
-                  mapFiles_Offices.forEach(function (officeId) {
+                  // Only affect tower/site layers, leave cable layers unchanged
+                  mapFiles_Points.forEach(function (siteId) {
+                    const visibility = showTowers ? "visible" : "none";
                     map.setLayoutProperty(
-                      officeId + "_points",
+                      `${siteId}_points`,
                       "visibility",
-                      "none"
+                      visibility
                     );
-                    if (document.getElementById("control" + officeId)) {
-                      document.getElementById(
-                        "control" + officeId
-                      ).checked = false;
+                    map.setLayoutProperty(
+                      `${siteId}_clusters`,
+                      "visibility",
+                      visibility
+                    );
+                    map.setLayoutProperty(
+                      `${siteId}_cluster-count`,
+                      "visibility",
+                      visibility
+                    );
+
+                    // Keep checkbox state in sync with tower visibility
+                    const checkbox = document.getElementById(
+                      `control${siteId}`
+                    );
+                    if (checkbox) checkbox.checked = showTowers;
+                  });
+                });
+
+                // Handle individual checkbox changes
+                checkboxes.forEach(function (checkbox) {
+                  checkbox.addEventListener("change", function () {
+                    const id = this.id.replace("control", "");
+                    const visibility = this.checked ? "visible" : "none";
+
+                    if (id.includes("Sites")) {
+                      // Handle tower/site layers
+                      map.setLayoutProperty(
+                        `${id}_points`,
+                        "visibility",
+                        visibility
+                      );
+                      map.setLayoutProperty(
+                        `${id}_clusters`,
+                        "visibility",
+                        visibility
+                      );
+                      map.setLayoutProperty(
+                        `${id}_cluster-count`,
+                        "visibility",
+                        visibility
+                      );
+                    } else {
+                      // Handle cable layers independently
+                      map.setLayoutProperty(id, "visibility", visibility);
+                      map.setLayoutProperty(
+                        `${id}_symbol`,
+                        "visibility",
+                        visibility
+                      );
                     }
                   });
-                }
-              });
-
-            // Update the tower toggle when the checkbox in filters is clicked
-            document
-              .getElementById("controlpartner-sites-layer")
-              .addEventListener("change", function (e) {
-                document.getElementById("towerToggle").checked =
-                  e.target.checked;
+                });
               });
           </script>
         </body>
