@@ -427,7 +427,21 @@ a,
           }
         }
 
-        /* Toggle Switch Styles */
+        /* Tower Toggle Switch Styles */
+        .tower-control {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 18px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tower-label {
+          font-size: 16px;
+          color: #333;
+        }
+
         .switch {
           position: relative;
           display: inline-block;
@@ -435,7 +449,7 @@ a,
           height: 34px;
         }
 
-        .switch .toggle-input {
+        .switch input {
           opacity: 0;
           width: 0;
           height: 0;
@@ -461,29 +475,6 @@ a,
           bottom: 4px;
           background-color: white;
           transition: 0.4s;
-        }
-
-        .toggle-input:checked + .slider {
-          background-color: #ff642c; /* EdgeStone brand color */
-        }
-
-        .toggle-input:checked + .slider:before {
-          transform: translateX(26px);
-        }
-
-        .slider.round {
-          border-radius: 34px;
-        }
-
-        .slider.round:before {
-          border-radius: 50%;
-        }
-
-        .tower-toggle-container {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin: 10px 0;
         }
 
         input:checked + .slider {
@@ -912,14 +903,10 @@ a,
               Show All Cables
             </button>
             <div class="controls" id="controls">
-              <div class="tower-toggle-container">
-                <span>Show All Towers</span>
+              <div class="tower-control">
+                <span class="tower-label">Show All Towers</span>
                 <label class="switch">
-                  <input
-                    type="checkbox"
-                    id="towerToggle"
-                    class="toggle-input"
-                  />
+                  <input type="checkbox" id="towerToggle" checked />
                   <span class="slider round"></span>
                 </label>
               </div>
@@ -1571,6 +1558,7 @@ a,
                   "visibility",
                   isChecked ? "visible" : "none"
                 );
+
               });
           </script>
         </body>
