@@ -1118,6 +1118,21 @@ a,
             });
 
             map.on("load", function () {
+              // Hide graticule lines
+              map.setLayoutProperty("water-line-label", "visibility", "none");
+              map.setLayoutProperty("graticules", "visibility", "none");
+              map.setLayoutProperty("grid-lines", "visibility", "none");
+
+              const layers = map.getStyle().layers;
+              layers.forEach((layer) => {
+                if (
+                  layer.id.includes("grid") ||
+                  layer.id.includes("graticule") ||
+                  layer.id.includes("line-label")
+                ) {
+                  map.setLayoutProperty(layer.id, "visibility", "none");
+                }
+              });
               // Create tower icon as SVG data URL
               const towerSvg = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
