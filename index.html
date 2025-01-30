@@ -1545,88 +1545,11 @@ a,
               .addEventListener("change", function (e) {
                 const isChecked = e.target.checked;
 
-                // Handle tower visibility
-                map.setLayoutProperty(
-                  "partner-sites-layer",
-                  "visibility",
-                  isChecked ? "visible" : "none"
-                );
+                // Handle tower visibility - only for partner-sites-layer
+                map.setLayoutProperty("partner-sites-layer", "visibility", isChecked ? "visible" : "none");
 
-                // Update tower checkbox in the filters
-                document.getElementById("controlpartner-sites-layer").checked =
-                  isChecked;
-
-                // Separate handlers for towers toggle and individual checkboxes
-                const towerToggle = document.getElementById("towerToggle"); // Show All Towers switch
-                const checkboxes = document.querySelectorAll(
-                  "input[type='checkbox']"
-                );
-
-                // Handle tower toggle switch
-                towerToggle.addEventListener("change", function () {
-                  const showTowers = this.checked;
-
-                  // Only affect tower/site layers, leave cable layers unchanged
-                  mapFiles_Points.forEach(function (siteId) {
-                    const visibility = showTowers ? "visible" : "none";
-                    map.setLayoutProperty(
-                      `${siteId}_points`,
-                      "visibility",
-                      visibility
-                    );
-                    map.setLayoutProperty(
-                      `${siteId}_clusters`,
-                      "visibility",
-                      visibility
-                    );
-                    map.setLayoutProperty(
-                      `${siteId}_cluster-count`,
-                      "visibility",
-                      visibility
-                    );
-
-                    // Keep checkbox state in sync with tower visibility
-                    const checkbox = document.getElementById(
-                      `control${siteId}`
-                    );
-                    if (checkbox) checkbox.checked = showTowers;
-                  });
-                });
-
-                // Handle individual checkbox changes
-                checkboxes.forEach(function (checkbox) {
-                  checkbox.addEventListener("change", function () {
-                    const id = this.id.replace("control", "");
-                    const visibility = this.checked ? "visible" : "none";
-
-                    if (id.includes("Sites")) {
-                      // Handle tower/site layers
-                      map.setLayoutProperty(
-                        `${id}_points`,
-                        "visibility",
-                        visibility
-                      );
-                      map.setLayoutProperty(
-                        `${id}_clusters`,
-                        "visibility",
-                        visibility
-                      );
-                      map.setLayoutProperty(
-                        `${id}_cluster-count`,
-                        "visibility",
-                        visibility
-                      );
-                    } else {
-                      // Handle cable layers independently
-                      map.setLayoutProperty(id, "visibility", visibility);
-                      map.setLayoutProperty(
-                        `${id}_symbol`,
-                        "visibility",
-                        visibility
-                      );
-                    }
-                  });
-                });
+                // Update partner sites checkbox in the filters
+                document.getElementById("controlpartner-sites-layer").checked = isChecked;
               });
           </script>
         </body>
