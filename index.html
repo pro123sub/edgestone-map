@@ -1243,7 +1243,7 @@ a,
             function addLineLayer(filename, defaultColor) {
               map.addSource(filename, {
                 type: "geojson",
-                data: `https://raw.githubusercontent.com/Aerotalk/edgestone-map/refs/heads/prantik-dev/${filename}.geojson`,
+                data: `./${filename}.geojson`,
               });
               map.addLayer({
                 id: filename,

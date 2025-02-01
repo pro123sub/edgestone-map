@@ -920,26 +920,464 @@
     },
     {
       "type": "Feature",
-      "properties": {
-        "Name": "IMEWE",
-        "description": "RFS: 2010 December (IMEWE)",
-        "tessellate": 1,
-        "extrude": 0,
-        "visibility": -1
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [5.372530429989041, 43.29362778902916, 0.0],
-          [15.067443562021538, 37.51344748573402, 0.0],
-          [35.85922883292588, 34.43974246013238, 0.0],
-          [29.893513059094772, 31.191465077638554, 0.0],
-          [32.529931191431416, 29.972545436050268, 0.0],
-          [39.182756478507656, 21.481533475503085, 0.0],
-          [56.333724328601164, 25.121690004958737, 0.0],
-          [67.02854675228852, 24.889731701235718, 0.0],
-          [72.87590260996691, 19.076074257285313, 0.0]
+          [
+            32.529947,
+            29.972572,
+            0
+          ],
+          [
+            32.09965,
+            30.650095,
+            0
+          ],
+          [
+            30.799055,
+            31.249158,
+            0
+          ],
+          [
+            29.893522,
+            31.191545,
+            0
+          ]
         ]
+      },
+      "properties": {
+        "Name":"IMEWE",
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            28.589235,
+            32.362506,
+            0
+          ],
+          [
+            29.893522,
+            31.191545,
+            0
+          ],
+          [
+            30.748208,
+            31.167328,
+            0
+          ],
+          [
+            32.048804,
+            30.5677,
+            0
+          ],
+          [
+            32.529947,
+            29.972572,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "Name":"IMEWE",
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            38.364218,
+            21.803406,
+            0
+          ],
+          [
+            39.182826,
+            21.481544,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "Name":"IMEWE",
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            56.333722,
+            25.121681,
+            0
+          ],
+          [
+            62.162718,
+            23.814879,
+            0
+          ],
+          [
+            64.335195,
+            16.189874,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "Name":"IMEWE",
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            67.028584,
+            24.889715,
+            0
+          ],
+          [
+            67.807317,
+            17.085937,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "Name":"IMEWE",
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            35.859235,
+            34.439743,
+            0
+          ],
+          [
+            32.295546,
+            32.815737,
+            0
+          ],
+          [
+            28.589235,
+            32.362506,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "Name":"IMEWE",
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            15.067431,
+            37.513444,
+            0
+          ],
+          [
+            16.692411,
+            35.121243,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "Name":"IMEWE",
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            5.372515,
+            43.293593,
+            0
+          ],
+          [
+            8.354844,
+            37.426967,
+            0
+          ],
+          [
+            11.399518,
+            37.419732,
+            0
+          ],
+          [
+            13.635922,
+            35.57784,
+            0
+          ],
+          [
+            16.692411,
+            35.121243,
+            0
+          ],
+          [
+            17.480426,
+            34.094061,
+            0
+          ],
+          [
+            28.324031,
+            32.598921,
+            0
+          ],
+          [
+            28.589235,
+            32.362506,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32.529947,
+            29.972572,
+            0
+          ],
+          [
+            32.892202,
+            28.973126,
+            0
+          ],
+          [
+            33.882971,
+            27.814849,
+            0
+          ],
+          [
+            34.679426,
+            27.55576,
+            0
+          ],
+          [
+            38.364218,
+            21.803406,
+            0
+          ],
+          [
+            42.889349,
+            14.412015,
+            0
+          ],
+          [
+            42.704107,
+            13.95267,
+            0
+          ],
+          [
+            43.682006,
+            12.295255,
+            0
+          ],
+          [
+            44.09764,
+            12.304903,
+            0
+          ],
+          [
+            44.468334,
+            11.675443,
+            0
+          ],
+          [
+            45.811653,
+            11.344289,
+            0
+          ],
+          [
+            64.335195,
+            16.189823,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            64.335195,
+            16.189823,
+            0
+          ],
+          [
+            67.807317,
+            17.085937,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            67.807317,
+            17.085937,
+            0
+          ],
+          [
+            70.542692,
+            17.788931,
+            0
+          ],
+          [
+            72.578241,
+            18.887848,
+            0
+          ],
+          [
+            72.875936,
+            19.076115,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "IMEWE",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> imewe<br>\n<b>cable_id:</b> 1536<br>\n<b>description:</b> [{\"latlon\":\"31.191856,29.889861\",\"name\":\"Alexandria, Egypt\",\"landing_point_id\":6044},{\"latlon\":\"37.511603,15.067457\",\"name\":\"Catania, Italy\",\"landing_point_id\":3214},{\"latlon\":\"25.121671,56.333737\",\"name\":\"Fujairah, United Arab Emirates\",\"landing_point_id\":5962},{\"latlon\":\"21.481246,39.182762\",\"name\":\"Jeddah, Saudi Arabia\",\"landing_point_id\":4361},{\"latlon\":\"24.889376,67.028539\",\"name\":\"Karachi, Pakistan\",\"landing_point_id\":3259},{\"latlon\":\"43.293177,5.372607\",\"name\":\"Marseille, France\",\"landing_point_id\":3210},{\"latlon\":\"19.075779,72.875866\",\"name\":\"Mumbai, India\",\"landing_point_id\":3212},{\"latlon\":\"29.972258,32.530133\",\"name\":\"Suez, Egypt\",\"landing_point_id\":5825},{\"latlon\":\"34.439468,35.859158\",\"name\":\"Tripoli, Lebanon\",\"landing_point_id\":8663}]<br>\n<b>name:</b> IMEWE<br>\n<b>color:</b> #565ca5<br>\n<b>length:</b> 12,091 km<br>\n<b>rfs:</b> December 2010<br>\n<b>owners:</b> Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt<br>\n<b>url:</b> <a href=\"http://imewecable.com\" target=\"_blank\">http://imewecable.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "imewe",
+        "cable_id": 1536,
+        "color": "#565ca5",
+        "length": "12,091 km",
+        "rfs": "December 2010",
+        "owners": "Telecom Italia Sparkle,  Etisalat,  Tata Communications,  Pakistan Telecommunications Company Ltd.,  France Telecom,  airtel (Bharti),  Saudi Telecom,  Ogero,  Telecom Egypt",
+        "url": "http://imewecable.com",
+        "": ""
       }
     }
   ]

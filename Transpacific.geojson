@@ -82,7 +82,7 @@
       "type": "Feature",
       "properties": {
         "Name": "JUNO",
-        "description": "RFS: 2025 March (JUNO)",
+        "description": "JUNO",
         "tessellate": 1,
         "extrude": 0,
         "visibility": -1,
@@ -132,30 +132,192 @@
     },
     {
       "type": "Feature",
-      "properties": {
-        "Name": "Australia-Japan Cable (AJC)",
-        "description": "RFS: 2001 December (AJC)",
-        "tessellate": 1,
-        "extrude": 0,
-        "visibility": -1
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [151.22848710426095, -33.88203865028561, 0.0],
-          [154.8695669085836, -31.851465665577166, 0.0],
-          [157.04996298027257, -28.74381028114999, 0.0],
-          [158.3999620239206, -25.5408960762594, 0.0],
-          [160.19996074878455, -18.880139975101287, 0.0],
-          [157.49996266148864, -0.331409329660175, 0.0],
-          [148.49996903716843, 13.710817738179543, 0.0],
-          [143.5499725437925, 30.901396088515583, 0.0],
-          [140.84997445649643, 31.67051304708704, 0.0],
-          [138.59997605041642, 32.62301664000799, 0.0],
-          [137.69997668798445, 33.283811019051, 0.0],
-          [136.87399727311598, 34.33682825203164, 0.0],
-          [139.97546699999984, 35.005433, 0.0]
+          [
+            151.228553,
+            -33.882011,
+            0
+          ],
+          [
+            151.70516,
+            -33.546041,
+            0
+          ],
+          [
+            151.245009,
+            -33.737066,
+            0
+          ],
+          [
+            151.495233,
+            -33.429806,
+            0
+          ],
+          [
+            158.15402,
+            -31.456369,
+            0
+          ]
         ]
+      },
+      "properties": {
+        "name": "Australia-Japan Cable (AJC)",
+        "description": "AJC",
+        "id": "australia-japan-cable-ajc",
+        "cable_id": 1102,
+        "color": "#bd74b0",
+        "length": "12,700 km",
+        "rfs": "December 2001",
+        "owners": "Softbank Telecom,  NTT,  Telstra,  Verizon Business,  AT&T",
+        "url": "http://www.ajcable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            148.372074,
+            14.228308,
+            0
+          ],
+          [
+            145.428461,
+            13.712282,
+            0
+          ],
+          [
+            144.809441,
+            13.549167,
+            0
+          ],
+          [
+            145.20482,
+            13.581469,
+            0
+          ],
+          [
+            144.800369,
+            13.513661,
+            0
+          ],
+          [
+            145.459053,
+            13.508087,
+            0
+          ],
+          [
+            148.380725,
+            14.186011,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Australia-Japan Cable (AJC)",
+        "description": "AJC",
+        "id": "australia-japan-cable-ajc",
+        "cable_id": 1102,
+        "color": "#bd74b0",
+        "length": "12,700 km",
+        "rfs": "December 2001",
+        "owners": "Softbank Telecom,  NTT,  Telstra,  Verizon Business,  AT&T",
+        "url": "http://www.ajcable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            136.874005,
+            34.33681,
+            0
+          ],
+          [
+            138.92791,
+            30.48994,
+            0
+          ],
+          [
+            148.337684,
+            25.689705,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Australia-Japan Cable (AJC)",
+        "description": "AJC",
+        "id": "australia-japan-cable-ajc",
+        "cable_id": 1102,
+        "color": "#bd74b0",
+        "length": "12,700 km",
+        "rfs": "December 2001",
+        "owners": "Softbank Telecom,  NTT,  Telstra,  Verizon Business,  AT&T",
+        "url": "http://www.ajcable.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.816986,
+            35.037516,
+            0
+          ],
+          [
+            144.663864,
+            30.624919,
+            0
+          ],
+          [
+            148.398236,
+            25.634731,
+            0
+          ],
+          [
+            148.398025,
+            14.202993,
+            0
+          ],
+          [
+            162.893719,
+            -10.362833,
+            0
+          ],
+          [
+            158.122373,
+            -31.483494,
+            0
+          ],
+          [
+            151.228553,
+            -33.882011,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Australia-Japan Cable (AJC)",
+        "description": "AJC",
+        "id": "australia-japan-cable-ajc",
+        "cable_id": 1102,
+        "color": "#bd74b0",
+        "length": "12,700 km",
+        "rfs": "December 2001",
+        "owners": "Softbank Telecom,  NTT,  Telstra,  Verizon Business,  AT&T",
+        "url": "http://www.ajcable.com",
+        "": ""
       }
     },
     {

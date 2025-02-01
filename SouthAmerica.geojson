@@ -4,21 +4,512 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {
-        "Name": "Equinix SP3 - Digital Realty NYC2",
-        "description": "SAm-1/GlobeNet"
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-74.003345013838555, 40.74143050902854, 0.0],
-          [-58.046826923070377, 12.15472866106691, 0.0],
-          [-38.395173526256613, 0.858932439199642, 0.0],
-          [-32.724339479868362, -6.584182278052739, 0.0],
-          [-36.637080394389862, -23.647232375651559, 0.0],
-          [-44.3238726478803, -24.54416537112278, 0.0],
-          [-46.863480217184922, -23.466730526714841, 0.0]
+          [
+            -38.542964,
+            -3.718705,
+            0
+          ],
+          [
+            -33.186355,
+            0.151503,
+            0
+          ],
+          [
+            -28.663651,
+            -3.487756,
+            0
+          ],
+          [
+            -28.663651,
+            -12.818772,
+            0
+          ],
+          [
+            -32.047688,
+            -17.473329,
+            0
+          ],
+          [
+            -39.257242,
+            -26.967491,
+            0
+          ],
+          [
+            -44.517538,
+            -24.79556,
+            0
+          ],
+          [
+            -46.328076,
+            -23.961915,
+            0
+          ]
         ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -46.328076,
+            -23.961915,
+            0
+          ],
+          [
+            -40.83185,
+            -28.093419,
+            0
+          ],
+          [
+            -50.440158,
+            -39.433257,
+            0
+          ],
+          [
+            -56.695442,
+            -36.470908,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -44.517538,
+            -24.79556,
+            0
+          ],
+          [
+            -43.209558,
+            -22.903463,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.914429,
+            -2.272902,
+            0
+          ],
+          [
+            -84.332645,
+            -2.965979,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -81.053782,
+            -4.153832,
+            0
+          ],
+          [
+            -83.965327,
+            -4.739228,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -66.106693,
+            18.466135,
+            0
+          ],
+          [
+            -67.441784,
+            18.768465,
+            0
+          ],
+          [
+            -74.147092,
+            12.416907,
+            0
+          ],
+          [
+            -74.779773,
+            10.940409,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -38.504513,
+            -12.96997,
+            0
+          ],
+          [
+            -32.047688,
+            -17.473329,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80.088964,
+            26.350607,
+            0
+          ],
+          [
+            -79.910368,
+            24.702273,
+            0
+          ],
+          [
+            -81.107582,
+            24.248454,
+            0
+          ],
+          [
+            -83.589463,
+            24.248454,
+            0
+          ],
+          [
+            -86.296989,
+            21.742117,
+            0
+          ],
+          [
+            -86.296989,
+            20.368878,
+            0
+          ],
+          [
+            -87.491355,
+            17.751131,
+            0
+          ],
+          [
+            -88.597161,
+            15.727301,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -90.822225,
+            13.934742,
+            0
+          ],
+          [
+            -92.932093,
+            10.068167,
+            0
+          ],
+          [
+            -86.232165,
+            6.579105,
+            0
+          ],
+          [
+            -84.332645,
+            -2.965979,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -84.332645,
+            -2.965979,
+            0
+          ],
+          [
+            -83.965327,
+            -4.739228,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.965327,
+            -4.739228,
+            0
+          ],
+          [
+            -82.332963,
+            -12.919891,
+            0
+          ],
+          [
+            -76.874292,
+            -12.278437,
+            0
+          ],
+          [
+            -82.142288,
+            -13.853213,
+            0
+          ],
+          [
+            -80.849236,
+            -20.072227,
+            0
+          ],
+          [
+            -70.306755,
+            -18.473471,
+            0
+          ],
+          [
+            -80.658561,
+            -20.970317,
+            0
+          ],
+          [
+            -77.814372,
+            -33.633975,
+            0
+          ],
+          [
+            -71.620431,
+            -33.045603,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -38.542964,
+            -3.718705,
+            0
+          ],
+          [
+            -36.711276,
+            1.109797,
+            0
+          ],
+          [
+            -54.999046,
+            19.100335,
+            0
+          ],
+          [
+            -65.200792,
+            19.100335,
+            0
+          ],
+          [
+            -66.106693,
+            18.466135,
+            0
+          ],
+          [
+            -74.363454,
+            28.374829,
+            0
+          ],
+          [
+            -80.088964,
+            26.350607,
+            0
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South America-1 (SAm-1)",
+        "description": "<div class=\"googft-info-window\">\n<b>id:</b> south-america-1-sam-1<br>\n<b>cable_id:</b> 1083<br>\n<b>description:</b> [{\"latlon\":\"-18.473782,-70.306750\",\"name\":\"Arica, Chile\",\"landing_point_id\":5800},{\"latlon\":\"10.940437,-74.779783\",\"name\":\"Barranquilla, Colombia\",\"landing_point_id\":4315},{\"latlon\":\"26.350304,-80.088937\",\"name\":\"Boca Raton, Florida, United States\",\"landing_point_id\":3563},{\"latlon\":\"-3.718838,-38.542979\",\"name\":\"Fortaleza, Brazil\",\"landing_point_id\":3347},{\"latlon\":\"-36.472523,-56.695512\",\"name\":\"Las Toninas, Argentina\",\"landing_point_id\":3330},{\"latlon\":\"-12.278515,-76.874302\",\"name\":\"Lurin, Peru\",\"landing_point_id\":5930},{\"latlon\":\"-4.154015,-81.053804\",\"name\":\"Mancora, Peru\",\"landing_point_id\":8484},{\"latlon\":\"15.727178,-88.597215\",\"name\":\"Puerto Barrios, Guatemala\",\"landing_point_id\":5848},{\"latlon\":\"13.934572,-90.822237\",\"name\":\"Puerto San Jose, Guatemala\",\"landing_point_id\":5849},{\"latlon\":\"-2.272968,-80.914417\",\"name\":\"Punta Carnero, Ecuador\",\"landing_point_id\":5824},{\"latlon\":\"-22.903448,-43.209557\",\"name\":\"Rio de Janeiro, Brazil\",\"landing_point_id\":3242},{\"latlon\":\"-12.969979,-38.504631\",\"name\":\"Salvador, Brazil\",\"landing_point_id\":3342},{\"latlon\":\"18.465829,-66.106669\",\"name\":\"San Juan, Puerto Rico, United States\",\"landing_point_id\":4262},{\"latlon\":\"-23.961926,-46.328071\",\"name\":\"Santos, Brazil\",\"landing_point_id\":3411},{\"latlon\":\"-33.045822,-71.620512\",\"name\":\"Valparaíso, Chile\",\"landing_point_id\":3331}]<br>\n<b>name:</b> South America-1 (SAm-1)<br>\n<b>color:</b> #8cc751<br>\n<b>length:</b> 25,000 km<br>\n<b>rfs:</b> March 2001<br>\n<b>owners:</b> Telefonica<br>\n<b>url:</b> <a href=\"http://www.globalsolutions.telefonica.com\" target=\"_blank\">http://www.globalsolutions.telefonica.com</a><br>\n<b>col10:</b> \n</div>",
+        "id": "south-america-1-sam-1",
+        "cable_id": 1083,
+        "color": "#8cc751",
+        "length": "25,000 km",
+        "rfs": "March 2001",
+        "owners": "Telefonica",
+        "url": "http://www.globalsolutions.telefonica.com",
+        "": ""
       }
     }
   ]
