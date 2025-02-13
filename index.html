@@ -1040,6 +1040,9 @@ a,
               <a href="https://edgestone.in/contact-us/">Contact Us</a>
             </div>
           </div>
+          <input type="text" id="searchBox" placeholder="Search cables..." onkeyup="searchCables()" 
+         style="position: absolute; top: 10px; left: 50px; z-index: 1000; padding: 5px; font-size: 14px;"/>
+
           <script>
             document
               .getElementById("zoomOutButton")
@@ -1064,6 +1067,50 @@ a,
     }
     */
               });
+              document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("searchBox").addEventListener("keyup", searchCables);
+});
+
+function searchCables() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+
+    if (!input) {
+        // Reset visibility if search is cleared
+        mapFiles_LineStrings.forEach(function(lineId) {
+            map.setLayoutProperty(lineId, "visibility", "visible");
+            map.setLayoutProperty(lineId + "_symbol", "visible");
+        });
+        return;
+    }
+
+    // Hide all cables first
+    mapFiles_LineStrings.forEach(function(lineId) {
+        map.setLayoutProperty(lineId, "visibility", "none");
+        map.setLayoutProperty(lineId + "_symbol", "visibility", "none");
+    });
+
+    // Show only the matching cable
+    let found = false;
+    mapFiles_LineStrings.forEach(function(lineId) {
+        if (lineId.toLowerCase().includes(input)) {
+            map.setLayoutProperty(lineId, "visibility", "visible");
+            map.setLayoutProperty(lineId + "_symbol", "visibility", "visible");
+
+            // Zoom to the cable
+            let source = map.getSource(lineId);
+            if (source && source._data && source._data.features.length > 0) {
+                let coordinates = source._data.features[0].geometry.coordinates[0];
+                map.flyTo({ center: coordinates, zoom: 4, duration: 2000 });
+                found = true;
+            }
+        }
+    });
+
+    if (!found) {
+        console.log("Cable not found!");
+    }
+}
+
           </script>
         </body>
       </html>
@@ -1572,6 +1619,50 @@ a,
                   isChecked ? "visible" : "none"
                 );
               });
+              document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("searchBox").addEventListener("keyup", searchCables);
+});
+
+function searchCables() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+
+    if (!input) {
+        // Reset visibility if search is cleared
+        mapFiles_LineStrings.forEach(function(lineId) {
+            map.setLayoutProperty(lineId, "visibility", "visible");
+            map.setLayoutProperty(lineId + "_symbol", "visible");
+        });
+        return;
+    }
+
+    // Hide all cables first
+    mapFiles_LineStrings.forEach(function(lineId) {
+        map.setLayoutProperty(lineId, "visibility", "none");
+        map.setLayoutProperty(lineId + "_symbol", "visibility", "none");
+    });
+
+    // Show only the matching cable
+    let found = false;
+    mapFiles_LineStrings.forEach(function(lineId) {
+        if (lineId.toLowerCase().includes(input)) {
+            map.setLayoutProperty(lineId, "visibility", "visible");
+            map.setLayoutProperty(lineId + "_symbol", "visibility", "visible");
+
+            // Zoom to the cable
+            let source = map.getSource(lineId);
+            if (source && source._data && source._data.features.length > 0) {
+                let coordinates = source._data.features[0].geometry.coordinates[0];
+                map.flyTo({ center: coordinates, zoom: 4, duration: 2000 });
+                found = true;
+            }
+        }
+    });
+
+    if (!found) {
+        console.log("Cable not found!");
+    }
+}
+
           </script>
         </body>
       </html>
